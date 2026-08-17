@@ -1,0 +1,40 @@
+{
+  "name": "slop-university-course-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "git rev-parse --git-dir >/dev/null 2>&1 && git config core.hooksPath .githooks || true",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check",
+    "check": "pnpm typecheck && pnpm build && oxlint --ignore-path .gitignore && stylelint \"**/*.css\" --ignore-path .gitignore --allow-empty-input && vitest run",
+    "check:evidence": "node scripts/check-evidence.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^7.0.0",
+    "@astrojs/svelte": "^9.0.0",
+    "@iconify-json/iconoir": "^1.2.11",
+    "astro": "^7.2.0",
+    "astro-course-anu": "git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#astro-course-anu@v0.10.0&path:/packages/astro-course-anu",
+    "astro-theme-slop": "github:benswift/astro-theme-slop#v0.1.0",
+    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.11.9",
+    "sharp": "^0.35.3",
+    "svelte": "^5.55.10"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/jsdom": "^27.0.0",
+    "@types/node": "^24.0.0",
+    "jsdom": "^29.1.1",
+    "lightningcss": "^1.32.0",
+    "oxlint": "^1.75.0",
+    "pagefind": "^1.5.2",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard": "^40.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  },
+  "packageManager": "pnpm@11.9.0"
+}

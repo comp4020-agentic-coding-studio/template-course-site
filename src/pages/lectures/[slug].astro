@@ -1,0 +1,24 @@
+---
+import { render } from "astro:content";
+import { getPublishedCollection } from "astro-course-anu/content";
+import RelatedContent from "astro-course-anu/components/RelatedContent.astro";
+import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { graphCollections, siteConfig } from "../../site-config";
+
+export async function getStaticPaths() {
+  const lectures = await getPublishedCollection("lectures");
+  return lectures.map((lecture) => ({ params: { slug: lecture.id }, props: { lecture } }));
+}
+
+const { lecture } = Astro.props;
+const { Content } = await render(lecture);
+const title =
+  lecture.data.week == null
+    ? lecture.data.title
+    : `Week ${lecture.data.week}: ${lecture.data.title}`;
+---
+
+<ContentLayout title={title} description={lecture.data.description} {...siteConfig}>
+  <Content />
+  <RelatedContent entry={lecture} collections={graphCollections} />
+</ContentLayout>

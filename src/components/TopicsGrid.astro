@@ -1,0 +1,49 @@
+---
+import { getPublishedCollection } from "astro-course-anu/content";
+import { resolveEdgeTarget } from "astro-course-anu";
+import FilterableCardGrid from "astro-theme-university/components/FilterableCardGrid.svelte";
+
+// Which weeks' lectures cover each topic. The edge can be declared from either
+// side --- a lecture's `related:` or a topic's --- so both are read. This is the
+// content graph doing real work: nothing here restates the schedule.
+const lectures = await getPublishedCollection("lectures");
+const weeksByTopic = new Map<string, Set<number>>();
+const weekByLecture = new Map(lectures.map((l) => [`lectures/${l.id}`, l.data.week]));
+
+for (const lecture of lectures) {
+  const week = lecture.data.week;
+  if (week == null) continue;
+  for (const ref of (lecture.data.related ?? []).map((r) => resolveEdgeTarget("lectures", r))) {
+    if (!ref.startsWith("topics/")) continue;
+    if (!weeksByTopic.has(ref)) weeksByTopic.set(ref, new Set());
+    weeksByTopic.get(ref)!.add(week);
+  }
+}
+
+const topics = await getPublishedCollection("topics");
+const items = topics
+  .sort((a, b) => a.data.title.localeCompare(b.data.title))
+  .map((topic) => {
+    const weeks = weeksByTopic.get(`topics/${topic.id}`) ?? new Set<number>();
+    for (const ref of (topic.data.related ?? []).map((r) => resolveEdgeTarget("topics", r))) {
+      const week = weekByLecture.get(ref);
+      if (week != null) weeks.add(week);
+    }
+    return {
+      title: topic.data.title,
+      href: `/topics/${topic.id}/`,
+      description: topic.data.description,
+      tags: topic.data.tags,
+      badges: [...weeks].sort((a, b) => a - b).map((w) => `Week ${w}`),
+    };
+  });
+---
+
+<FilterableCardGrid
+  client:load
+  {items}
+  columns={2}
+  label="Filter topics"
+  placeholder="Filter topics…"
+  headingLevel="h2"
+/>

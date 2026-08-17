@@ -1,0 +1,16 @@
+---
+title: Lectures
+description: "What is covered, week by week, and which topics each lecture draws on."
+heroTitle: Lectures
+heroImage: /src/assets/images/hero-lectures.avif
+heroImageAlt: A speaker's silhouette against a large projected shape, audience heads in the foreground, in a two-ink gold and black risograph print
+---
+
+import LecturesGrid from "../../components/LecturesGrid.astro";
+
+Each lecture declares the topics it covers in its `related:` frontmatter. That
+is the only place the mapping is written: the topic pages pick up their week
+badges from it, and the related block at the foot of each page renders the
+connection from both ends.
+
+<LecturesGrid />
