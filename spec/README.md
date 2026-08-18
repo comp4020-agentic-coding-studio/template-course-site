@@ -19,10 +19,9 @@ one top-level heading, a document language, a real title, a meta description, an
 don't delete them.
 
 The description and the card are what a link to your site looks like when
-someone shares it — in a message, on the hall-of-fame gallery. A scraper can
-fall back to the page's own title and description if the meta tags are missing;
-there is no fallback for the card image, so without it a shared link renders as
-a bare row of text.
+someone shares it. The card check is presence only: a path that doesn't resolve
+shows up in the course gallery, not as a red check, so look at the deployed head
+when you add pages.
 
 ## A worked example (yours to replace)
 
