@@ -1,22 +1,9 @@
-import { execFileSync } from "node:child_process";
 import { defineConfig } from "astro/config";
 import courseGraph from "astro-course-anu";
 import universityTheme from "astro-theme-university";
 import { courseMeta } from "./src/course-config.ts";
 import { graphCollections } from "./src/site-config.ts";
-import { resolveDeployment } from "./scripts/pages-base.ts";
-
-/** The origin remote, or undefined outside a git checkout. */
-function gitOrigin(): string | undefined {
-  try {
-    return execFileSync("git", ["remote", "get-url", "origin"], {
-      encoding: "utf8",
-      stdio: ["ignore", "pipe", "ignore"],
-    });
-  } catch {
-    return undefined;
-  }
-}
+import { gitOrigin, resolveDeployment } from "./scripts/pages-base.ts";
 
 // Derived, never hardcoded --- see scripts/pages-base.ts for why.
 const { site, base } = resolveDeployment(process.env, gitOrigin);
