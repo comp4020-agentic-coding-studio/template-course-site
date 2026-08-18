@@ -1,6 +1,8 @@
 ---
 title: Getting started
-description: The first session of the semester — what to have working before you arrive, and what happens once you do
+description:
+  The first session of the semester — what to have working before you arrive,
+  and what happens once you do
 week: 1
 spec:
   - your development environment runs the course's toolchain

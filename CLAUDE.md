@@ -84,14 +84,13 @@ components are rewritten for you; the build's link checker catches the rest.
 
 ## The link-preview card
 
-The image people see when a link to the site is shared comes from
-`socialImage:` in `src/site-config.ts`, pointing at a `/src/assets/...` path;
-`socialImageAlt:` describes it. Both are placeholders --- replace them, and keep
-the picture 1200x630. A page with artwork of its own overrides the site-wide
-card with its own `socialImage:` frontmatter key. The theme turns whichever
-applies into the `og:image` the invariants look for, and re-encodes it to a
-JPEG, since the scrapers still don't decode the formats the site serves to
-browsers.
+The image people see when a link to the site is shared comes from `socialImage:`
+in `src/site-config.ts`, pointing at a `/src/assets/...` path; `socialImageAlt:`
+describes it. Both are placeholders --- replace them, and keep the picture
+1200x630. A page with artwork of its own overrides the site-wide card with its
+own `socialImage:` frontmatter key. The theme turns whichever applies into the
+`og:image` the invariants look for, and re-encodes it to a JPEG, since the
+scrapers still don't decode the formats the site serves to browsers.
 
 ## The checks
 

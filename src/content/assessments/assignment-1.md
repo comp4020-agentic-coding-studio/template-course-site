@@ -1,6 +1,8 @@
 ---
 title: Assignment 1
-description: The first piece of graded work — a placeholder brief showing the shape every assessment page follows
+description:
+  The first piece of graded work — a placeholder brief showing the shape every
+  assessment page follows
 week: 6
 due: 2027-04-12T12:00:00+10:00
 weight: 40
@@ -18,8 +20,8 @@ what is submitted, and say how it is marked.
 
 ## The brief
 
-> One sentence stating the problem, set as a blockquote so it reads as the
-> thing being asked rather than as commentary on it.
+> One sentence stating the problem, set as a blockquote so it reads as the thing
+> being asked rather than as commentary on it.
 
 Then a paragraph or two on what makes a strong response --- the room the brief
 leaves, and the judgement it is testing. Keep the provocation and the mechanics

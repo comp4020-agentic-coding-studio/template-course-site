@@ -1,6 +1,7 @@
 ---
 title: Second lecture
-description: Week 2 — the first substantive material, and the run-up to the first review
+description:
+  Week 2 — the first substantive material, and the run-up to the first review
 week: 2
 related:
   - topics/second-concept

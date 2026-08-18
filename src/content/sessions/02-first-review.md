@@ -1,6 +1,8 @@
 ---
 title: First review
-description: The second session, where work made in week 1 meets an audience for the first time
+description:
+  The second session, where work made in week 1 meets an audience for the first
+  time
 week: 2
 spec:
   - work from week 1 is running and can be shown in under two minutes

@@ -1,6 +1,8 @@
 ---
 title: Opening lecture
-description: The first lecture — what the course is, why it is shaped this way, and what happens in week 1
+description:
+  The first lecture — what the course is, why it is shaped this way, and what
+  happens in week 1
 week: 1
 related:
   - topics/first-concept
