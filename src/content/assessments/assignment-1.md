@@ -12,7 +12,6 @@ spec:
   - the work is yours, with any assistance declared
 related:
   - final-project
-  - topics/first-concept
 ---
 
 Replace this brief. An assessment page has three jobs: pose the problem, say

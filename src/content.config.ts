@@ -3,8 +3,8 @@ import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { courseNodeSchema, definePeopleCollection } from "astro-course-anu/schemas";
 
-// Four collections join the content graph (topics, sessions, assessments,
-// lectures) and one does not (people). Each graph collection's key is its whole
+// Three collections join the content graph (sessions, assessments, lectures)
+// and one does not (people). Each graph collection's key is its whole
 // address: the on-disk directory, the URL segment, the /api/ path segment, and
 // the `related:` ref prefix all agree. Renaming one is therefore a rename in
 // five places --- see CLAUDE.md, which walks through renaming `sessions`.
@@ -20,13 +20,6 @@ const courseNodeLoader = (dir: string) =>
   glob({ pattern: ["**/*.{md,mdx}", "!**/CLAUDE.md"], base: `src/content/${dir}` });
 
 export const collections = {
-  // Reusable chunks of course content: one concept, tool or activity each.
-  // Everything that is not a session, an assessment or a lecture goes here.
-  topics: defineCollection({
-    loader: courseNodeLoader("topics"),
-    schema: courseNodeSchema.loose(),
-  }),
-
   // The recurring teaching slot. What it is actually called --- lab, tute,
   // workshop, studio, seminar, crit --- is a design decision this template
   // deliberately leaves to you.

@@ -25,10 +25,9 @@ they're called --- is the work.
 
 ## The content model
 
-Content is markdown with frontmatter under `src/content/`, in five collections
-declared in `src/content.config.ts`: `topics`, `sessions`, `assessments`,
-`lectures` and `people`. The first four join a content graph; `people` is the
-cast list.
+Content is markdown with frontmatter under `src/content/`, in four collections
+declared in `src/content.config.ts`: `sessions`, `assessments`, `lectures` and
+`people`. The first three join a content graph; `people` is the cast list.
 
 The collection key is the whole address. `sessions/getting-started` is the file
 `src/content/sessions/getting-started.md`, the page
@@ -69,6 +68,9 @@ Do it as one change and run `pnpm check`. A half-finished rename fails loudly
 rather than shipping a broken listing, so this is a good task to direct an agent
 through end to end.
 
+Adding a collection --- a reference layer of topic pages, say, if your course
+wants one --- is the same five places in reverse.
+
 ## The base path
 
 The site deploys to `https://<owner>.github.io/<repo>/`, so every internal URL
@@ -78,7 +80,7 @@ carries a `/<repo>/` prefix. `astro.config.ts` derives it at config time from
 `spec/pages-base.test.ts`.
 
 Nothing to configure --- but a hand-written root-absolute link
-(`href="/topics/"`) in an `.astro` file skips Astro's base handling, works on
+(`href="/sessions/"`) in an `.astro` file skips Astro's base handling, works on
 `localhost`, and 404s on the live site. Markdown links and the theme's
 components are rewritten for you; the build's link checker catches the rest.
 

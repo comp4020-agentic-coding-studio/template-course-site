@@ -8,8 +8,6 @@ spec:
   - your development environment runs the course's toolchain
   - you can build and preview the site locally
   - you have something, however rough, to show the room
-related:
-  - topics/first-concept
 ---
 
 Replace this page. A session brief tells a student three things: what to bring,

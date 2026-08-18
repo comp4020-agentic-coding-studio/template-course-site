@@ -10,8 +10,6 @@ spec:
   - submitted by the deadline, in the format named below
   - it stands on its own, without you in the room to explain it
   - it answers the brief rather than restating it
-related:
-  - topics/second-concept
 ---
 
 Replace this brief. The final project is where a course's weights usually

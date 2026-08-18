@@ -5,17 +5,14 @@ description:
   happens in week 1
 week: 1
 related:
-  - topics/first-concept
   - sessions/01-getting-started
 ---
 
-Replace this page. A lecture entry says what was covered and links to the topics
-that own the detail, so the lecture page stays short and the topics stay
-canonical.
+Replace this page. A lecture entry says what was covered and links to the pages
+that own the detail, so the lecture stays short and nothing is explained twice.
 
-The `related:` refs above are the "covers" mapping. They are why
-[First concept](/topics/first-concept/) shows a week 1 badge on the topics
-listing --- the schedule is derived from the graph rather than written twice.
+The `related:` ref above is a graph edge: it renders on this page and on the
+session's, so declare a connection once, on whichever side is convenient.
 
 ## Outline
 

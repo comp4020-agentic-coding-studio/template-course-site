@@ -8,7 +8,6 @@ spec:
   - work from week 1 is running and can be shown in under two minutes
   - you can name the one decision you are least sure about
 related:
-  - topics/second-concept
   - assessments/assignment-1
 ---
 

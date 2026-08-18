@@ -52,16 +52,16 @@ and asset URL needs that prefix. `astro.config.ts` derives it at config time ---
 from `GITHUB_REPOSITORY` in CI, falling back to your `origin` remote --- so a
 local build and the deployed one agree without you setting anything.
 
-The consequence worth knowing: a hand-written `href="/topics/"` in an `.astro`
+The consequence worth knowing: a hand-written `href="/sessions/"` in an `.astro`
 file bypasses Astro's base handling and 404s on the live site while working
 perfectly on `localhost`. Use the theme's components and markdown links, which
 are rewritten for you, and let the build's link checker catch the rest.
 
 ## What's here
 
-- `src/content/` --- the content, as markdown with frontmatter: `topics`,
-  `sessions`, `assessments`, `lectures` and `people`. Two entries each, all
-  obviously placeholder. Delete them and write your own.
+- `src/content/` --- the content, as markdown with frontmatter: `sessions`,
+  `assessments`, `lectures` and `people`. Two entries each, all obviously
+  placeholder. Delete them and write your own.
 - `src/content.config.ts` --- the schemas those collections validate against.
 - `src/course-config.ts` --- the course record (code, title, teaching dates,
   learning outcomes). Placeholder; make it yours first, since the site header

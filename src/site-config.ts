@@ -7,7 +7,7 @@ import { slopBranding } from "astro-theme-slop";
 /** Collections that participate in the content graph. The same list goes to
  *  `courseGraph()` in astro.config.ts and to the render-time helpers, so the
  *  graph and the pages can never disagree about which collections exist. */
-export const graphCollections = ["topics", "sessions", "assessments", "lectures"];
+export const graphCollections = ["sessions", "assessments", "lectures"];
 
 export const siteConfig = defineSiteConfig({
   ...slopBranding,
@@ -17,7 +17,6 @@ export const siteConfig = defineSiteConfig({
     { text: "Lectures", href: "/lectures/" },
     { text: "Sessions", href: "/sessions/" },
     { text: "Assessment", href: "/assessments/" },
-    { text: "Topics", href: "/topics/" },
     { text: "People", href: "/people/" },
   ],
 

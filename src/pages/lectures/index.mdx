@@ -8,9 +8,9 @@ heroImageAlt: A speaker's silhouette against a large projected shape, audience h
 
 import LecturesGrid from "../../components/LecturesGrid.astro";
 
-Each lecture declares the topics it covers in its `related:` frontmatter. That
-is the only place the mapping is written: the topic pages pick up their week
-badges from it, and the related block at the foot of each page renders the
-connection from both ends.
+Each lecture declares the sessions and assessments it feeds in its `related:`
+frontmatter, and the related block at the foot of each page renders the
+connection from both ends --- declare an edge once, on whichever side is
+convenient.
 
 <LecturesGrid />
