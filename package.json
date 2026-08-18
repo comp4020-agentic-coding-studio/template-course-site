@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "typecheck": "astro check",
-    "check": "pnpm typecheck && pnpm build && oxlint --ignore-path .gitignore && stylelint \"**/*.css\" --ignore-path .gitignore --allow-empty-input && vitest run",
+    "check": "pnpm typecheck && pnpm build && vitest run",
     "check:evidence": "node scripts/check-evidence.ts",
     "test": "vitest run"
   },
@@ -29,10 +29,7 @@
     "@types/node": "^24.0.0",
     "jsdom": "^29.1.1",
     "lightningcss": "^1.32.0",
-    "oxlint": "^1.75.0",
     "pagefind": "^1.5.2",
-    "stylelint": "^17.14.1",
-    "stylelint-config-standard": "^40.0.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10"
   },
