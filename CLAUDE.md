@@ -96,8 +96,8 @@ scrapers still don't decode the formats the site serves to browsers.
 
 ## The checks
 
-`typecheck`, `build`, `spec`, `lint`, `tests`, `evidence`, `links`, `secrets`,
-`deploy`. Run `pnpm check`. Read the failure.
+`pnpm check` runs them (`pnpm check:evidence` is the extra gate before you
+ship); CI runs the same plus links, secrets and the deploy. Read the failure.
 
 `pnpm build` is itself several checks: it runs axe over every rendered page,
 verifies internal links respect the base path, and fails on a dangling content
