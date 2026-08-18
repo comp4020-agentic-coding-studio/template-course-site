@@ -25,10 +25,16 @@ const roleLabel = person.data.role ? roleLabels[person.data.role] : undefined;
 // extension point), so it needs a cast out of the generated types.
 const rawPhotoAlt = (person.data as { photoAlt?: unknown }).photoAlt;
 const photoAlt = typeof rawPhotoAlt === "string" ? rawPhotoAlt : "";
+// Every page owes a description --- it is what a search result and a shared
+// link show underneath the title. The people schema has no field for one, so
+// compose it from what a person entry does carry.
+const description =
+  [roleLabel, person.data.affiliation].filter(Boolean).join(", ") || person.data.title;
 ---
 
 <ContentLayout
   title={person.data.title}
+  description={description}
   heroImage={person.data.photo ?? undefined}
   heroImageAlt={photoAlt}
   {...siteConfig}

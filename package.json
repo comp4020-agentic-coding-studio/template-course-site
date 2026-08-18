@@ -19,7 +19,7 @@
     "astro": "^7.2.0",
     "astro-course-anu": "git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#astro-course-anu@v0.10.0&path:/packages/astro-course-anu",
     "astro-theme-slop": "github:benswift/astro-theme-slop#v0.1.0",
-    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.11.9",
+    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.12.0",
     "sharp": "^0.35.3",
     "svelte": "^5.55.10"
   },

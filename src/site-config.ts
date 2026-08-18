@@ -22,4 +22,12 @@ export const siteConfig = defineSiteConfig({
   ],
 
   licence: "CC-BY-NC-SA-4.0",
+
+  // The image people see when a link to this site is shared --- on Slack, in a
+  // message, on the hall-of-fame gallery. Replace the placeholder; 1200x630 is
+  // the size every scraper expects, and the theme re-encodes it to a JPEG card.
+  // A page with artwork of its own overrides this with a `socialImage:`
+  // frontmatter key (a `/src/assets/...` path) and a `socialImageAlt:`.
+  socialImage: "/src/assets/images/card.png",
+  socialImageAlt: "Slop University",
 });
