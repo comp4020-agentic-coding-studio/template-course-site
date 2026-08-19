@@ -7,7 +7,7 @@ week: 1
 spec:
   - your development environment runs the course's toolchain
   - you can build and preview the site locally
-  - you have something, however rough, to show the room
+  - you have something, however rough, to show the class
 ---
 
 Replace this page. A session brief tells a student three things: what to bring,
@@ -27,5 +27,5 @@ parts and say roughly how long each takes. Students plan against it.
 
 ## Afterwards
 
-Say what leaves the room: a mark, a piece of feedback, a decision about the next
-week's work.
+Say what leaves the session: a mark, a piece of feedback, a decision about the
+next week's work.

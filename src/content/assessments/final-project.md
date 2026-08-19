@@ -8,7 +8,7 @@ due: 2027-05-28T12:00:00+10:00
 weight: 60
 spec:
   - submitted by the deadline, in the format named below
-  - it stands on its own, without you in the room to explain it
+  - it stands on its own, without you there to explain it
   - it answers the brief rather than restating it
 ---
 
