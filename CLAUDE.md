@@ -71,6 +71,28 @@ through end to end.
 Adding a collection --- a reference layer of topic pages, say, if your course
 wants one --- is the same five places in reverse.
 
+## Slides
+
+A lecture can carry real slides. Decks live in `src/decks/` as `.deck.mdx` files
+and build to `/decks/<name>/`, rendered by
+[astromotion](https://github.com/ANUcybernetics/astromotion) --- markdown, with
+`---` between slides. Its README has the rest of the syntax: slide classes,
+backgrounds, speaker notes, QR codes, fragments, and components hydrated per
+slide.
+
+`src/decks/theme.css` is one import, and it should stay that way. The theme's
+deck stylesheet derives its colours from the same brand tokens the site uses, so
+a deck already matches the rest of the site; a colour restated there is how the
+two start to disagree.
+
+`pnpm decks:check` walks every slide in a headless Chrome and reports anything
+that doesn't fit the canvas. Content overflows a slide silently, so run it
+before you call a deck done.
+
+A deck is not a content-collection entry, so it has no `related:` edges. Link it
+from its lecture page with a markdown link (`[Slides](/decks/week-01/)`), which
+the build rewrites for the base path.
+
 ## The base path
 
 The site deploys to `https://<owner>.github.io/<repo>/`, so every internal URL

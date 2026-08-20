@@ -10,6 +10,7 @@
     "typecheck": "astro check",
     "check": "pnpm typecheck && pnpm build && vitest run",
     "check:evidence": "node scripts/check-evidence.ts",
+    "decks:check": "astromotion-check",
     "test": "vitest run"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "astro-course-anu": "git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#astro-course-anu@v0.10.0&path:/packages/astro-course-anu",
     "astro-theme-slop": "github:benswift/astro-theme-slop#v0.1.0",
     "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.12.0",
+    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.21.1",
     "sharp": "^0.35.3",
     "svelte": "^5.55.10"
   },

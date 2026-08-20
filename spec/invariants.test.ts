@@ -17,21 +17,30 @@ function files(dir: string = DIST): string[] {
 }
 
 // Everything the build emitted, as dist-relative POSIX paths.
-const shipped = files().map((path) => relative(DIST, path).split(sep).join("/"));
+const shipped = files().map((path) =>
+  relative(DIST, path).split(sep).join("/"),
+);
 
 const pages = shipped
   .filter((name) => name.endsWith(".html"))
-  .map((name) => ({
-    name,
-    doc: new JSDOM(readFileSync(join(DIST, name), "utf8")).window.document,
-  }));
+  .map((name) => {
+    const doc = new JSDOM(readFileSync(join(DIST, name), "utf8")).window
+      .document;
+    // A slide deck ships as a page but isn't one in the sense three of these
+    // checks mean: it carries a <section> per slide, each with its own
+    // top-level heading, and it wears no site chrome. Detected by Reveal's own
+    // wrapper so the carve-out survives moving the deck route. The theme runs
+    // structural checks over decks at build time; every other invariant here
+    // still applies to them.
+    return { name, doc, isDeck: doc.querySelector(".reveal") !== null };
+  });
 
 describe("invariants: every page", () => {
   it("built at least one page", () => {
     expect(pages.length).toBeGreaterThan(0);
   });
 
-  for (const { name, doc } of pages) {
+  for (const { name, doc, isDeck } of pages) {
     describe(name, () => {
       it("declares its language", () => {
         expect(doc.documentElement.getAttribute("lang")).toBeTruthy();
@@ -52,7 +61,7 @@ describe("invariants: every page", () => {
         ).toBeTruthy();
       });
 
-      it("has an og:image card", () => {
+      it.skipIf(isDeck)("has an og:image card", () => {
         // presence only: whether the path resolves shows up in the gallery
         const card = doc
           .querySelector('meta[property="og:image"]')
@@ -68,11 +77,11 @@ describe("invariants: every page", () => {
         expect(doc.querySelector('meta[name="viewport"]')).toBeTruthy();
       });
 
-      it("has a navigation landmark", () => {
+      it.skipIf(isDeck)("has a navigation landmark", () => {
         expect(doc.querySelector("nav")).toBeTruthy();
       });
 
-      it("has exactly one top-level heading", () => {
+      it.skipIf(isDeck)("has exactly one top-level heading", () => {
         expect(doc.querySelectorAll("h1").length).toBe(1);
       });
 

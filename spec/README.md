@@ -18,6 +18,11 @@ one top-level heading, a document language, a real title, a meta description, an
 **built** site (`dist/`), so they check what actually ships. Keep them green;
 don't delete them.
 
+Three of them --- the card, the navigation landmark and the single top-level
+heading --- skip slide decks. A deck is a different genre of page: one document
+holding a `<section>` per slide, each with its own heading, and no site chrome
+around it. The build runs its own structural checks over decks instead.
+
 The description and the card are what a link to your site looks like when
 someone shares it. The card check is presence only: a path that doesn't resolve
 shows up in the course gallery, not as a red check, so look at the deployed head

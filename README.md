@@ -69,6 +69,9 @@ are rewritten for you, and let the build's link checker catch the rest.
 - `src/pages/` --- one listing page and one detail route per collection, plus
   the home page and a 404.
 - `src/components/` --- the card grids the listing pages render.
+- `src/decks/` --- slide decks, as markdown. One placeholder deck at
+  `/decks/week-01/`, and `theme.css`, which puts them in the same brand as the
+  site. `pnpm decks:check` reports slides whose content doesn't fit.
 - `src/site-config.ts` --- site name, navigation, licence, and the Slop
   branding.
 - `src/assets/images/` --- the hero images. Generated for this template; replace
