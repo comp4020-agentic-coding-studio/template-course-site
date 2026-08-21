@@ -1,32 +1,40 @@
 import { defineSiteConfig } from "astro-theme-university/types";
-// The Slop University identity: lockups, crest, favicon. Paired with
-// `brandCss: "astro-theme-slop/slop.css"` in astro.config.ts, which sets the
-// three colour tokens the theme derives everything else from.
 import { slopBranding } from "astro-theme-slop";
+import { courseMeta } from "./course-config";
 
-/** Collections that participate in the content graph. The same list goes to
- *  `courseGraph()` in astro.config.ts and to the render-time helpers, so the
- *  graph and the pages can never disagree about which collections exist. */
-export const graphCollections = ["sessions", "assessments", "lectures"];
+// The underlying collection and URL remain `sessions`; these labels are the
+// language students see. Change them to Studios, Tutorials, Expeditions, etc.
+export const sessionLabels = {
+  singular: "Session",
+  plural: "Sessions",
+} as const;
+
+export const graphCollections = [
+  "sessions",
+  "assessments",
+  "lectures",
+  "people",
+];
+
+export const courseApiCollections = [
+  ...graphCollections.map((key) => ({ key })),
+  { key: "policies", dir: "pages/policies" },
+];
 
 export const siteConfig = defineSiteConfig({
   ...slopBranding,
   name: "Slop University",
 
   links: [
+    { text: courseMeta.code, href: "/course/" },
     { text: "Lectures", href: "/lectures/" },
-    { text: "Sessions", href: "/sessions/" },
+    { text: sessionLabels.plural, href: "/sessions/" },
     { text: "Assessment", href: "/assessments/" },
     { text: "People", href: "/people/" },
+    { text: "Policies", href: "/policies/" },
   ],
 
   licence: "CC-BY-NC-SA-4.0",
-
-  // The image people see when a link to this site is shared --- on Slack, in a
-  // message, on the hall-of-fame gallery. Replace the placeholder; 1200x630 is
-  // the size every scraper expects, and the theme re-encodes it to a JPEG card.
-  // A page with artwork of its own overrides this with a `socialImage:`
-  // frontmatter key (a `/src/assets/...` path) and a `socialImageAlt:`.
   socialImage: "/src/assets/images/card.png",
-  socialImageAlt: "Slop University",
+  socialImageAlt: `A preview card for ${courseMeta.code}: ${courseMeta.title}`,
 });

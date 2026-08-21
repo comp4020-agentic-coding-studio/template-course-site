@@ -8,9 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "typecheck": "astro check",
-    "check": "pnpm typecheck && pnpm build && vitest run",
+    "check": "pnpm typecheck && pnpm build && vitest run && pnpm decks:check",
     "check:evidence": "node scripts/check-evidence.ts",
-    "decks:check": "astromotion-check",
+    "decks:check": "node scripts/check-decks.ts",
     "test": "vitest run"
   },
   "dependencies": {
@@ -32,6 +32,7 @@
     "jsdom": "^29.1.1",
     "lightningcss": "^1.32.0",
     "pagefind": "^1.5.2",
+    "puppeteer-core": "^24.0.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10"
   },

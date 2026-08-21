@@ -28,23 +28,28 @@ someone shares it. The card check is presence only: a path that doesn't resolve
 shows up in the course gallery, not as a red check, so look at the deployed head
 when you add pages.
 
+## Course-data integrity (shipped, always on)
+
+`data-integrity.test.ts` protects the shared plumbing: API version and canonical
+URL, dates within the teaching period, teacher refs that resolve to people,
+valid learning-outcome IDs, and the required policy headings. Keep it. These
+are structural facts every course and the future catalogue depend on.
+
 ## A worked example (yours to replace)
 
-`starter.test.ts` shows the shape of a spec test: the assessment listing links
-to every assessment, and the assessment weights sum to 100. Both read the built
-site — one the HTML, one the course API at `dist/api/index.json`. They're a
-worked example, not part of the always-on contract: adapt them to your own
-course, or delete them and write your own. A fact about one course is not a
-universal invariant.
+`starter.test.ts` shows two course-specific spec tests: the assessment listing
+links to every assessment, and assessment weights sum to 100. Both read the
+built site — one the HTML, one the course API. Adapt or replace them as your
+course takes shape. A fact about one course is not a universal invariant.
 
 ## Your spec tests (yours to write)
 
 Turning the week's published spec into tests is your work, not the template's.
-Some spec lines are mechanically checkable — assert those here, in your own test
-file alongside the invariants (any `spec/*.test.ts` runs with `pnpm check`).
-Some lines only a person can judge; leave those to the crit. Write tests for the
-**contracts** — what the page must do, not how you built it — so the tests
-survive a change of approach, or of stack.
+Some spec lines are mechanically checkable — assert those here (any
+`spec/*.test.ts` runs with `pnpm check`). Some only a person can judge; leave
+those to the crit. There is no minimum test count. Select and justify the checks
+that protect your design's real promises, and test **contracts** — what the page
+must do, not how you happened to build it.
 
 A green suite here is backpressure, not a mark: your tutor verifies the live
 site against the published spec at the crit, and keeping your own tests green is

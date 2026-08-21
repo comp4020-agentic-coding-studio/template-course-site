@@ -10,6 +10,7 @@
 // derive from the name alone, offline. The final-project repo spans several
 // deliverables; any one of its names counts here.
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 
@@ -44,6 +45,30 @@ export function expectedReflections(repo: string): string[] | null {
   if (repo.startsWith("comp4020-final-"))
     return ["crit-8.md", "crit-9.md", "crit-10.md", "final-project.md"];
   return null;
+}
+
+function sha256(path: string): string {
+  return createHash("sha256").update(readFileSync(path)).digest("hex");
+}
+
+function remainingStarterText(): string {
+  try {
+    return execFileSync(
+      "git",
+      [
+        "grep",
+        "-n",
+        "-E",
+        "Course Title Goes Here|Replace this page\\.|replace me",
+        "--",
+        "src",
+      ],
+      { encoding: "utf8" },
+    ).trim();
+  } catch (error) {
+    if ((error as { status?: number }).status === 1) return "";
+    throw error;
+  }
 }
 
 function main(): void {
@@ -83,6 +108,25 @@ function main(): void {
           ? `no reflection — the marker reads reflections/${expected[0]}`
           : `no reflection — the marker reads these names: ${expected.join(", ")}`,
       );
+    }
+  }
+
+  if (repo?.startsWith("comp4020-ass2-")) {
+    const trackedSource = remainingStarterText();
+    if (trackedSource) {
+      fail(`starter text remains in the submitted site:\n${trackedSource}`);
+    }
+
+    const starterAssets: Record<string, string> = {
+      "src/assets/images/card.png":
+        "c11fe509e1d3319f6bc0551b6824bf595bccb36f51d256ff59095632ebbb6077",
+      "src/assets/images/hero-home.avif":
+        "fdd8f8b12382a2356fbd3fe4ac22651d07243970f69ce8b685c5532042defe3f",
+    };
+    for (const [path, starterHash] of Object.entries(starterAssets)) {
+      if (existsSync(path) && sha256(path) === starterHash) {
+        fail(`${path} is still the starter image — replace it or make a deliberate image-free design`);
+      }
     }
   }
 

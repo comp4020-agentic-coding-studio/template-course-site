@@ -34,9 +34,9 @@ for the details.
 ```sh
 mise install       # supported path: install the template's Node and pnpm
 pnpm install
-pnpm dev        # local dev server
-pnpm check      # most of what CI runs (links, secrets, evidence and deploy are CI-only)
-pnpm build      # produce dist/ (what gets deployed)
+pnpm dev             # local dev server
+pnpm check           # types, build integrity, tests and deck fit
+pnpm check:evidence  # final submission gate
 ```
 
 `mise` is the course's recommended runtime manager. If you use another manager
@@ -59,23 +59,24 @@ are rewritten for you, and let the build's link checker catch the rest.
 
 ## What's here
 
-- `src/content/` --- the content, as markdown with frontmatter: `sessions`,
-  `assessments`, `lectures` and `people`. Two entries each, all obviously
-  placeholder. Delete them and write your own.
+- `src/content/` --- structured Markdown for `sessions`, `assessments`,
+  `lectures` and `people`. The small placeholder set is a working example;
+  replace it incrementally and keep the checks green.
 - `src/content.config.ts` --- the schemas those collections validate against.
-- `src/course-config.ts` --- the course record (code, title, teaching dates,
-  learning outcomes). Placeholder; make it yours first, since the site header
-  and the JSON API both read it.
-- `src/pages/` --- one listing page and one detail route per collection, plus
-  the home page and a 404.
+- `src/course-config.ts` --- the validated course record: SLOP code, title,
+  description, tags, level, session and dates, with optional learning outcomes.
+  Make it yours first; the home page, course page, navigation and JSON API all
+  read it.
+- `src/pages/` --- generated home and course-record pages, listings and detail
+  routes, one ordinary Markdown policies page, and a 404.
 - `src/components/` --- the card grids the listing pages render.
 - `src/decks/` --- slide decks, as markdown. One placeholder deck at
   `/decks/week-01/`, and `theme.css`, which puts them in the same brand as the
   site. `pnpm decks:check` reports slides whose content doesn't fit.
 - `src/site-config.ts` --- site name, navigation, licence, and the Slop
   branding.
-- `src/assets/images/` --- the hero images. Generated for this template; replace
-  them with your own if the course you design wants a different look.
+- `src/assets/images/` --- starter home/social artwork. Replace it with
+  course-specific work, or make a deliberate image-free treatment.
 - `spec/` --- what the checks are for (`README.md`), the shipped invariants
   (`invariants.test.ts`), and a replaceable worked example (`starter.test.ts`);
   the spec tests you write live alongside them.
@@ -90,10 +91,16 @@ are rewritten for you, and let the build's link checker catch the rest.
   like an API key, so your COMP4020 key can't end up in a public repo. Installed
   automatically by `pnpm install`.
 
-The teaching sessions ship as a collection called `sessions` because no name
-would be neutral. Labs, tutes, workshops, studios, crits: what you call them,
-and what they are, is part of designing the course. `CLAUDE.md` has the rename
-checklist --- it's a good first task to direct an agent through, because the
-build fails until every reference agrees.
+The internal collection and URL stay `sessions`; choose the human-facing label
+(`Studios`, `Labs`, `Crits`, and so on) in `src/site-config.ts`. Stable internal
+names keep the course API uniform enough for the Slop catalogue to ingest.
+
+## The generated course API
+
+Every build emits a versioned `dist/api/index.json` and per-entry JSON. This is
+platform plumbing rather than an API-design exercise. The future Slop catalogue
+will use the course record and content nodes to filter and display published
+courses, including their canonical `courses.slop.university/SLOPxxxx/` path.
+The build-time tests verify this contract; do not hand-edit generated JSON.
 
 See the course site for how the checks map to each week of the course.

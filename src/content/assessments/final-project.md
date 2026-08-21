@@ -6,6 +6,16 @@ description:
 week: 12
 due: 2027-05-28T12:00:00+10:00
 weight: 60
+outcomes:
+  - LO1
+  - LO2
+  - LO3
+marking:
+  mode: holistic
+  description:
+    The final project is judged as a whole against the brief, with particular
+    attention to whether the result stands alone and whether its scope fits the
+    semester that produced it.
 spec:
   - submitted by the deadline, in the format named below
   - it stands on its own, without you there to explain it
@@ -26,16 +36,5 @@ twice the available hours is the most common way a capstone goes wrong.
 
 The artefact, and whatever a marker needs to run or read it.
 
-## How it's marked
-
-Worth 60% of the course, on the same band descriptors as everything else.
-
-| Criterion | Weight |
-| --------- | ------ |
-| First     | 50%    |
-| Second    | 30%    |
-| Third     | 20%    |
-
-## Key dates
-
-- **Due:** noon, Friday 28 May 2027
+This one demonstrates the alternative marking mode: a holistic explanation
+rather than weighted criteria. The site renders either mode from frontmatter.

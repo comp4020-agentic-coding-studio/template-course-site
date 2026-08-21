@@ -1,0 +1,17 @@
+---
+import { learningOutcomes } from "../course-config";
+
+interface Props {
+  outcomes: string[];
+}
+
+const { outcomes } = Astro.props;
+const selected = learningOutcomes.filter((outcome) => outcomes.includes(outcome.id));
+---
+
+{selected.length > 0 && (
+  <section aria-labelledby="assessed-outcomes">
+    <h2 id="assessed-outcomes">Learning outcomes assessed</h2>
+    <ul>{selected.map((outcome) => <li><strong>{outcome.id}:</strong> {outcome.description}</li>)}</ul>
+  </section>
+)}

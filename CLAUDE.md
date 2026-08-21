@@ -17,7 +17,7 @@ they're called --- is the work.
 ## How to work in here
 
 - Keep the dev server running (`pnpm dev`) so you see changes as you make them.
-- Run `pnpm check` before you push.
+- Run `pnpm check` before you push and `pnpm check:evidence` before submission.
 - Open the page in a browser and look at it. The rendered page is the truth;
   your mental model of it isn't.
 - When a check fails, read its output before you change anything.
@@ -25,9 +25,12 @@ they're called --- is the work.
 
 ## The content model
 
-Content is markdown with frontmatter under `src/content/`, in four collections
+Content is Markdown with frontmatter under `src/content/`, in four collections
 declared in `src/content.config.ts`: `sessions`, `assessments`, `lectures` and
-`people`. The first three join a content graph; `people` is the cast list.
+`people`. Sessions and lectures carry dates and structured teacher references;
+assessments carry dates, outcomes and marking models; people are the cast list.
+The ordinary Markdown page at `src/pages/policies/index.mdx` is also copied into
+the course API as a policy node.
 
 The collection key is the whole address. `sessions/getting-started` is the file
 `src/content/sessions/getting-started.md`, the page
@@ -41,35 +44,24 @@ renders on both pages, so declare it on whichever side is convenient. **The
 build fails on a ref that doesn't resolve**, which is the point: a dangling link
 is caught before it ships, not after.
 
-`src/course-config.ts` holds the course record --- code, title, teaching dates,
-description, learning outcomes. It's validated at config time and it feeds both
-the site and `/api/index.json`, so fill it in early.
+`src/course-config.ts` is the single source for the course record. Its strict
+schema validates the `SLOPxxxx` code and level, title, 80--300 character
+description, one to three tags, ANU-style session, year, teaching period and
+optional learning outcomes. It feeds the home page, `/course/`, navigation and
+`/api/index.json`, so fill it in first rather than restating those facts.
 
 Two orthogonal flags live in every graph collection's schema. `published: false`
 removes an entry from the production build entirely (no page, no listing, no
 graph edge) while leaving it visible in `pnpm dev`, so you can stage content.
 `draft: true` keeps the page visible and marks it as not yet final.
 
-## Renaming the sessions collection
+## Naming teaching sessions
 
-`sessions` is a deliberately bland name for the teaching sessions, because
-choosing what they are --- labs, tutes, workshops, studios, crits --- is part of
-designing the course. Renaming it touches five places, and the build fails until
-all five agree:
-
-1. the directory `src/content/sessions/`
-2. the `sessions:` key in `src/content.config.ts`
-3. the entry in `graphCollections` in `src/site-config.ts`, and the matching nav
-   link
-4. the route directory `src/pages/sessions/`
-5. every `related:` ref pointing at `sessions/...`, across all collections
-
-Do it as one change and run `pnpm check`. A half-finished rename fails loudly
-rather than shipping a broken listing, so this is a good task to direct an agent
-through end to end.
-
-Adding a collection --- a reference layer of topic pages, say, if your course
-wants one --- is the same five places in reverse.
+Keep the collection key, refs and URL as `sessions`. Choose what students see
+--- Labs, Studios, Workshops, Crits, or something else --- with `sessionLabels`
+in `src/site-config.ts`. The stable
+internal name is part of the catalogue contract; the visible language is a
+course-design choice.
 
 ## Slides
 
@@ -110,20 +102,25 @@ components are rewritten for you; the build's link checker catches the rest.
 
 The image people see when a link to the site is shared comes from `socialImage:`
 in `src/site-config.ts`, pointing at a `/src/assets/...` path; `socialImageAlt:`
-describes it. Both are placeholders --- replace them, and keep the picture
-1200x630. A page with artwork of its own overrides the site-wide card with its
+describes it. Both are placeholders --- replace them and keep the picture
+1200x630, or remove the imagery as part of a coherent image-free treatment. A
+page with artwork of its own overrides the site-wide card with its
 own `socialImage:` frontmatter key. The theme turns whichever applies into the
 `og:image` the invariants look for, and re-encodes it to a JPEG, since the
 scrapers still don't decode the formats the site serves to browsers.
 
 ## The checks
 
-`pnpm check` runs them (`pnpm check:evidence` is the extra gate before you
-ship); CI runs the same plus links, secrets and the deploy. Read the failure.
+`pnpm check` runs type checking, the production build and its integrity checks,
+the Vitest suite, and the deck fit check. `pnpm check:evidence` is a separate
+gate before you ship: it checks process citations, the required reflection and,
+for Assignment 2, remaining starter copy and imagery. CI adds the secret scan
+and deploy. Read the failure.
 
 `pnpm build` is itself several checks: it runs axe over every rendered page,
-verifies internal links respect the base path, and fails on a dangling content
-ref.
+verifies internal links respect the base path, fails on a dangling content ref,
+and emits the versioned API the catalogue ingests. `spec/data-integrity.test.ts`
+checks its dates, teacher references, outcome IDs and policy shape.
 
 `spec/README.md`, `PROCESS.md` and `reflections/README.md` are in this repo and
 say what they are for.

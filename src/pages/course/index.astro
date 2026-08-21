@@ -1,0 +1,34 @@
+---
+import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { courseMeta, learningOutcomes } from "../../course-config";
+import { formatCourseDate } from "../../lib/dates";
+import { siteConfig } from "../../site-config";
+
+const session = `${courseMeta.session}, ${courseMeta.year}`;
+---
+
+<ContentLayout
+  title={`${courseMeta.code}: ${courseMeta.title}`}
+  description={courseMeta.description}
+  {...siteConfig}
+>
+  <dl>
+    <dt>Course code</dt><dd>{courseMeta.code}</dd>
+    <dt>Level</dt><dd>{courseMeta.level}000 level</dd>
+    <dt>Session</dt><dd>{session}</dd>
+    <dt>Teaching period</dt>
+    <dd>{formatCourseDate(courseMeta.startDate)} – {formatCourseDate(courseMeta.endDate)}</dd>
+    <dt>Tags</dt><dd>{courseMeta.tags.join(" · ")}</dd>
+  </dl>
+
+  {learningOutcomes.length > 0 && (
+    <section aria-labelledby="learning-outcomes">
+      <h2 id="learning-outcomes">Learning outcomes</h2>
+      <ol>
+        {learningOutcomes.map((outcome) => (
+          <li><strong>{outcome.id}:</strong> {outcome.description}</li>
+        ))}
+      </ol>
+    </section>
+  )}
+</ContentLayout>

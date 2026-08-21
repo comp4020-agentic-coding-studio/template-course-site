@@ -51,7 +51,7 @@ const visible = people.sort((a, b) => {
             <small>{roleLabels[person.data.role]}</small>
           </p>
         )}
-        {person.data.affiliation && <p>{person.data.affiliation}</p>}
+        <p>{person.data.description}</p>
       </Card>
     ))
   }

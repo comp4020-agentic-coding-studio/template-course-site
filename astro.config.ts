@@ -3,7 +3,7 @@ import courseGraph from "astro-course-anu";
 import universityTheme from "astro-theme-university";
 import { astromotion, deckRemarkPlugins } from "astromotion";
 import { courseMeta } from "./src/course-config.ts";
-import { graphCollections } from "./src/site-config.ts";
+import { courseApiCollections } from "./src/site-config.ts";
 import { gitOrigin, resolveDeployment } from "./scripts/pages-base.ts";
 
 // Derived, never hardcoded --- see scripts/pages-base.ts for why.
@@ -32,9 +32,10 @@ export default defineConfig({
       extraRemarkPlugins: deckRemarkPlugins,
     }),
     courseGraph({
-      collections: graphCollections.map((key) => ({ key })),
+      collections: courseApiCollections,
       timezone: "Australia/Canberra",
       course: courseMeta,
+      canonicalUrl: `https://courses.slop.university/${courseMeta.code}/`,
     }),
     // Slide decks: every `.deck.mdx` under src/decks/ becomes a Reveal.js page
     // at /decks/<name>/. The theme's deck stylesheet reads the same brand

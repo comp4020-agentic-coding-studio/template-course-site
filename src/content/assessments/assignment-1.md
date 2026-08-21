@@ -6,6 +6,16 @@ description:
 week: 6
 due: 2027-04-12T12:00:00+10:00
 weight: 40
+outcomes:
+  - LO1
+  - LO2
+marking:
+  mode: weighted
+  criteria:
+    - name: Response to the brief
+      weight: 60
+    - name: Quality of execution
+      weight: 40
 spec:
   - submitted by the deadline, in the format named below
   - it does the thing the brief asks for, and a reader can tell that it does
@@ -32,23 +42,6 @@ read the second and know what to hand in.
 Name the artefact and the format. If evidence of process is part of the
 submission, say which files and what each is for.
 
-## How it's marked
-
-Worth 40% of the course. State the criteria and their weights as a table:
-
-| Criterion | Weight |
-| --------- | ------ |
-| First     | 60%    |
-| Second    | 40%    |
-
-Band descriptors --- what each grade means for each criterion --- belong on one
-page, linked from every brief. Restating them per assignment is how two versions
-of a rubric start disagreeing.
-
-## Key dates
-
-- **Due:** noon, Monday 12 April 2027
-- **Marks and feedback returned:** two weeks later
-
-Say the late policy and the extension process once, on the assessment page, and
-link it.
+The structured `marking:` block renders the criterion table below. Use weighted
+criteria, or switch to a clearly explained holistic marking method. Course-wide
+rules belong on the policy page rather than being restated here.

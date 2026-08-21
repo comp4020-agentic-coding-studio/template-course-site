@@ -1,65 +1,97 @@
-import { defineCollection } from "astro:content";
+import { defineCollection, reference } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
-import { courseNodeSchema, definePeopleCollection } from "astro-course-anu/schemas";
+import { courseNodeSchema } from "astro-course-anu/schemas";
 
-// Three collections join the content graph (sessions, assessments, lectures)
-// and one does not (people). Each graph collection's key is its whole
-// address: the on-disk directory, the URL segment, the /api/ path segment, and
-// the `related:` ref prefix all agree. Renaming one is therefore a rename in
-// five places --- see CLAUDE.md, which walks through renaming `sessions`.
-//
-// Every collection here shares `courseNodeSchema`: title, description, tags,
-// related, links, published, draft, spec. Type-specific fields are added on
-// top. `.loose()` lets a frontmatter field through untyped, so you can add one
-// and render it before deciding it belongs in the schema.
-
-const weekSchema = z.coerce.number().int().min(1).max(13);
-
+const weekSchema = z.coerce.number().int().min(1).max(12);
 const courseNodeLoader = (dir: string) =>
   glob({ pattern: ["**/*.{md,mdx}", "!**/CLAUDE.md"], base: `src/content/${dir}` });
+const teacherRefs = z.array(reference("people")).min(1);
+
+const weightedMarking = z
+  .object({
+    mode: z.literal("weighted"),
+    criteria: z
+      .array(z.object({ name: z.string().trim().min(1), weight: z.number().positive() }))
+      .min(1),
+  })
+  .superRefine((marking, ctx) => {
+    const total = marking.criteria.reduce((sum, criterion) => sum + criterion.weight, 0);
+    if (total !== 100) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["criteria"],
+        message: `criterion weights sum to ${total}, not 100`,
+      });
+    }
+  });
+
+const holisticMarking = z.object({
+  mode: z.literal("holistic"),
+  description: z.string().trim().min(40),
+});
 
 export const collections = {
-  // The recurring teaching slot. What it is actually called --- lab, tute,
-  // workshop, studio, seminar, crit --- is a design decision this template
-  // deliberately leaves to you.
   sessions: defineCollection({
     loader: courseNodeLoader("sessions"),
     schema: courseNodeSchema
       .extend({
         week: weekSchema,
-        repo: z.url().nullish(),
+        date: z.coerce.date(),
+        teachers: teacherRefs,
       })
       .loose(),
   }),
 
-  // Graded work. `due` is a date (a bare `2027-04-12` is read in the site
-  // timezone set in astro.config.ts); `weight` is a percentage of the course.
   assessments: defineCollection({
     loader: courseNodeLoader("assessments"),
     schema: courseNodeSchema
       .extend({
         week: weekSchema,
-        due: z.coerce.date().nullish(),
-        weight: z.coerce.number().nullish(),
+        due: z.coerce.date(),
+        weight: z.coerce.number().positive().max(100),
+        outcomes: z.array(z.string().regex(/^LO[1-9]\d*$/)).default([]),
+        marking: z.discriminatedUnion("mode", [weightedMarking, holisticMarking]),
       })
       .loose(),
   }),
 
-  // One entry per lecture. These are metadata pages, not slide decks: the body
-  // is the lecture's own content, and the graph edges say which topics it
-  // covers.
   lectures: defineCollection({
     loader: courseNodeLoader("lectures"),
     schema: courseNodeSchema
       .extend({
-        week: weekSchema.nullish(),
+        week: weekSchema,
+        date: z.coerce.date(),
+        teachers: teacherRefs,
+        slides: z.string().regex(/^\/decks\/[a-z0-9-]+\/$/).optional(),
       })
       .loose(),
   }),
 
-  // The cast: whoever teaches, tutors or guests. Not a graph collection --- the
-  // factory bakes in Astro's image() so `photo:` resolves through the image
-  // pipeline.
-  people: definePeopleCollection(),
+  people: defineCollection({
+    loader: courseNodeLoader("people"),
+    schema: ({ image }) =>
+      z
+        .object({
+          title: z.string().trim().min(1),
+          description: z.string().trim().min(40),
+          role: z.enum(["convenor", "tutor", "guest", "other"]),
+          contact: z.string().trim().min(1),
+          affiliation: z.string().trim().min(1).optional(),
+          email: z.email().optional(),
+          url: z.url().optional(),
+          photo: image().optional(),
+          photoAlt: z.string().trim().optional(),
+          published: z.coerce.boolean().default(true),
+        })
+        .superRefine((person, ctx) => {
+          if (person.photo && !person.photoAlt) {
+            ctx.addIssue({
+              code: "custom",
+              path: ["photoAlt"],
+              message: "describe the photo when one is supplied",
+            });
+          }
+        }),
+  }),
 };

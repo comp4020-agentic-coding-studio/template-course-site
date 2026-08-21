@@ -2,9 +2,10 @@
 import { getPublishedCollection } from "astro-course-anu/content";
 import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
+import { formatCourseDate } from "../lib/dates";
 
 const lectures = await getPublishedCollection("lectures");
-const visible = lectures.sort((a, b) => (a.data.week ?? 99) - (b.data.week ?? 99));
+const visible = lectures.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 ---
 
 <CardGrid columns={2}>
@@ -12,11 +13,7 @@ const visible = lectures.sort((a, b) => (a.data.week ?? 99) - (b.data.week ?? 99
     visible.map((lecture) => (
       <Card headingLevel="h2" title={lecture.data.title} href={`/lectures/${lecture.id}/`}>
         {lecture.data.description && <p>{lecture.data.description}</p>}
-        {lecture.data.week != null && (
-          <p>
-            <small>Week {lecture.data.week}</small>
-          </p>
-        )}
+        <p><small>Week {lecture.data.week} · {formatCourseDate(lecture.data.date)}</small></p>
       </Card>
     ))
   }

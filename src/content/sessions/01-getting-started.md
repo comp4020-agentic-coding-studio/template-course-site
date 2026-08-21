@@ -4,6 +4,9 @@ description:
   The first session of the semester — what to have working before you arrive,
   and what happens once you do
 week: 1
+date: 2027-02-22
+teachers:
+  - marisol-quaye
 spec:
   - your development environment runs the course's toolchain
   - you can build and preview the site locally

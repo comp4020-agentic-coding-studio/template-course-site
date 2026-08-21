@@ -4,6 +4,10 @@ description:
   The first lecture — what the course is, why it is shaped this way, and what
   happens in week 1
 week: 1
+date: 2027-02-22
+teachers:
+  - marisol-quaye
+slides: /decks/week-01/
 related:
   - sessions/01-getting-started
 ---
@@ -14,9 +18,8 @@ that own the detail, so the lecture stays short and nothing is explained twice.
 The `related:` ref above is a graph edge: it renders on this page and on the
 session's, so declare a connection once, on whichever side is convenient.
 
-[Slides](/decks/week-01/) --- decks are markdown too, under `src/decks/`. A
-markdown link like that one is rewritten for the deployed base path; a
-hand-written `href` in an `.astro` file is not.
+The page renders its `slides:` link automatically. Decks are markdown too,
+under `src/decks/`; the path is part of the lecture's API metadata.
 
 ## Outline
 
