@@ -11,6 +11,8 @@ photo: ./marisol-quaye.avif
 photoAlt: A stylised portrait of a person in three-quarter view, flat gold and black shapes on warm cream, in a two-ink risograph print
 ---
 
+<!-- STARTER_CONTENT: replace this person entry, then remove this comment. -->
+
 Replace this entry. A people page carries a short bio and whatever a student
 needs in order to contact the right person for the right thing --- and nothing
 that will be stale by week 3.

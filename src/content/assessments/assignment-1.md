@@ -21,6 +21,8 @@ related:
   - final-project
 ---
 
+<!-- STARTER_CONTENT: replace this assessment brief, then remove this comment. -->
+
 Replace this brief. An assessment page has three jobs: pose the problem, say
 what is submitted, and say how it is marked.
 

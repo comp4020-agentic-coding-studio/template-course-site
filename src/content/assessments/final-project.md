@@ -18,6 +18,8 @@ spec:
   - it answers the brief rather than restating it
 ---
 
+<!-- STARTER_CONTENT: replace this assessment brief, then remove this comment. -->
+
 Replace this brief. The final project is where a course's weights usually
 concentrate, so it is worth being explicit about how the earlier work feeds it.
 

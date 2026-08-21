@@ -12,6 +12,8 @@ related:
   - sessions/01-getting-started
 ---
 
+<!-- STARTER_CONTENT: replace this lecture, then remove this comment. -->
+
 Replace this page. A lecture entry says what was covered and links to the pages
 that own the detail, so the lecture stays short and nothing is explained twice.
 

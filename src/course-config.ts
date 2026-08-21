@@ -66,6 +66,7 @@ export const slopCourseMetaSchema = z
 // /course/ page, navigation label and /api/index.json all read this object.
 // Replace every placeholder value, but keep the shape: the catalogue ingests
 // this API contract when the course is published.
+// STARTER_CONTENT: replace this course record, then remove this comment.
 export const courseMeta = slopCourseMetaSchema.parse({
   code: "SLOP1000",
   title: "Course Title Goes Here",

@@ -13,6 +13,8 @@ spec:
   - you have something, however rough, to show the class
 ---
 
+<!-- STARTER_CONTENT: replace this session, then remove this comment. -->
+
 Replace this page. A session brief tells a student three things: what to bring,
 what will happen, and how to tell afterwards whether it went well.
 

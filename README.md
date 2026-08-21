@@ -85,7 +85,9 @@ are rewritten for you, and let the build's link checker catch the rest.
   content model, what the checks mean, and how to work here. Yours to grow.
 - `PROCESS.md` --- a template for your process overview, showing the
   cited-moment format. Replace it with your own; `pnpm check:evidence` verifies
-  your citations resolve.
+  your citations resolve. It also reports every authored starter fragment still
+  carrying a `STARTER_CONTENT` comment; remove each comment when that fragment
+  has genuinely been replaced.
 - `.github/workflows/checks.yml` --- the CI sensors that run on every push once
   your repo is public, and the GitHub Pages deploy.
 - `.githooks/pre-commit` --- blocks any commit that contains something shaped

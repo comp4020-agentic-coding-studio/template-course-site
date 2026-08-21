@@ -21,8 +21,8 @@ importers:
         specifier: ^7.2.0
         version: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
       astro-course-anu:
-        specifier: git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#astro-course-anu@v0.10.0&path:/packages/astro-course-anu
-        version: git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#f19f75eb883728c0bb7d3b75ac69a185dc8598dc&path:/packages/astro-course-anu(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
+        specifier: git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#astro-course-anu@v0.10.1&path:/packages/astro-course-anu
+        version: git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#c6622f85dbf98586f689c5306b94c9ba8f2b9bd9&path:/packages/astro-course-anu(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
       astro-theme-slop:
         specifier: github:benswift/astro-theme-slop#v0.1.0
         version: https://codeload.github.com/benswift/astro-theme-slop/tar.gz/96786f0eabfb3e3f0c030d6b1045e831ac799e0a(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
@@ -1141,9 +1141,9 @@ packages:
     resolution: {integrity: sha512-TYfDUZl0iYq1dVZO+R0appTBkDmSMsOrafgWJMGqoD4xVd74imTRdzekE6tA8+6AIi+/GXMGlr/im0unLD1LRg==}
     engines: {node: '>=18'}
 
-  astro-course-anu@git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#f19f75eb883728c0bb7d3b75ac69a185dc8598dc&path:/packages/astro-course-anu:
-    resolution: {commit: f19f75eb883728c0bb7d3b75ac69a185dc8598dc, path: /packages/astro-course-anu, repo: https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git, type: git}
-    version: 0.10.0
+  astro-course-anu@git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#c6622f85dbf98586f689c5306b94c9ba8f2b9bd9&path:/packages/astro-course-anu:
+    resolution: {commit: c6622f85dbf98586f689c5306b94c9ba8f2b9bd9, path: /packages/astro-course-anu, repo: https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git, type: git}
+    version: 0.10.1
     engines: {node: '>=24'}
     peerDependencies:
       astro: ^7.0.0
@@ -4267,7 +4267,7 @@ snapshots:
       node-html-parser: 7.1.0
       p-limit: 7.3.1
 
-  astro-course-anu@git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#f19f75eb883728c0bb7d3b75ac69a185dc8598dc&path:/packages/astro-course-anu(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)):
+  astro-course-anu@git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#c6622f85dbf98586f689c5306b94c9ba8f2b9bd9&path:/packages/astro-course-anu(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)):
     dependencies:
       astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
       yaml: 2.9.0

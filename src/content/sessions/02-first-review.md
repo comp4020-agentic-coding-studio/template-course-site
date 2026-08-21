@@ -14,6 +14,8 @@ related:
   - assessments/assignment-1
 ---
 
+<!-- STARTER_CONTENT: replace this session, then remove this comment. -->
+
 Replace this page. It is here so the sessions listing sorts by week, the detail
 route renders a second spec, and the related block has an edge into the
 assessment collection.

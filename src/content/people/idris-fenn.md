@@ -11,5 +11,7 @@ photo: ./idris-fenn.avif
 photoAlt: A stylised portrait of a person facing the viewer, flat gold and black shapes on warm cream, in a two-ink risograph print
 ---
 
+<!-- STARTER_CONTENT: replace this person entry, then remove this comment. -->
+
 Replace this entry. A second person makes the listing, role ordering and
 teacher-reference fields visible before you replace the cast with your own.

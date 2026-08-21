@@ -11,6 +11,8 @@ related:
   - assessments/assignment-1
 ---
 
+<!-- STARTER_CONTENT: replace this lecture, then remove this comment. -->
+
 Replace this page. It exists so the lectures listing sorts by week and the
 related block has more than one edge to draw.
 

@@ -84,6 +84,57 @@ function fixture(withClaudeMd = true, reflection = "crit-1.md"): string {
   return cwd;
 }
 
+function assignment2Fixture(starterContent: boolean): string {
+  const cwd = mkdtempSync(join(tmpdir(), "check-evidence-ass2-"));
+  fixtures.push(cwd);
+  mkdirSync(join(cwd, "reflections"));
+  mkdirSync(join(cwd, "src"));
+  writeFileSync(join(cwd, "reflections", "assignment-2.md"), "# Reflection\n");
+  writeFileSync(join(cwd, "CLAUDE.md"), "# Working method\n");
+  writeFileSync(
+    join(cwd, "src", "index.md"),
+    starterContent ? "<!-- STARTER_CONTENT: replace me -->\n" : "# A finished course\n",
+  );
+  execFileSync("git", ["init", "-q"], { cwd, env });
+  execFileSync(
+    "git",
+    [
+      "remote",
+      "add",
+      "origin",
+      "https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-alice.git",
+    ],
+    { cwd, env },
+  );
+  execFileSync("git", ["add", "src/index.md"], { cwd, env });
+  execFileSync(
+    "git",
+    [
+      "-c",
+      "user.name=Test",
+      "-c",
+      "user.email=test@example.invalid",
+      "-c",
+      "commit.gpgsign=false",
+      "commit",
+      "-m",
+      "fixture",
+      "-q",
+    ],
+    { cwd, env },
+  );
+  const sha = execFileSync("git", ["rev-parse", "HEAD"], {
+    cwd,
+    env,
+    encoding: "utf8",
+  }).trim();
+  writeFileSync(
+    join(cwd, "PROCESS.md"),
+    `# Process\n\nEvidence: [${sha.slice(0, 8)}](https://example.invalid/commit/${sha})\n`,
+  );
+  return cwd;
+}
+
 afterEach(() => {
   for (const cwd of fixtures.splice(0)) rmSync(cwd, { recursive: true });
 });
@@ -117,5 +168,25 @@ describe("check:evidence", () => {
     });
     expect(result.status).toBe(1);
     expect(result.stderr).toContain("no CLAUDE.md");
+  });
+
+  it("rejects a marked Assignment 2 starter fragment", () => {
+    const result = spawnSync(process.execPath, [script], {
+      cwd: assignment2Fixture(true),
+      env,
+      encoding: "utf8",
+    });
+    expect(result.status).toBe(1);
+    expect(result.stderr).toContain("src/index.md:1");
+    expect(result.stderr).toContain("STARTER_CONTENT");
+  });
+
+  it("accepts Assignment 2 source after its starter markers are removed", () => {
+    const result = spawnSync(process.execPath, [script], {
+      cwd: assignment2Fixture(false),
+      env,
+      encoding: "utf8",
+    });
+    expect(result.status, result.stderr).toBe(0);
   });
 });

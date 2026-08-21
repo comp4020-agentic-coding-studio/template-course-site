@@ -55,14 +55,7 @@ function remainingStarterText(): string {
   try {
     return execFileSync(
       "git",
-      [
-        "grep",
-        "-n",
-        "-E",
-        "Course Title Goes Here|Replace this page\\.|replace me",
-        "--",
-        "src",
-      ],
+      ["grep", "-n", "-F", "STARTER_CONTENT", "--", "src"],
       { encoding: "utf8" },
     ).trim();
   } catch (error) {
@@ -114,7 +107,9 @@ function main(): void {
   if (repo?.startsWith("comp4020-ass2-")) {
     const trackedSource = remainingStarterText();
     if (trackedSource) {
-      fail(`starter text remains in the submitted site:\n${trackedSource}`);
+      fail(
+        `starter content remains in the submitted site — replace each marked fragment and remove its STARTER_CONTENT comment:\n${trackedSource}`,
+      );
     }
 
     const starterAssets: Record<string, string> = {
