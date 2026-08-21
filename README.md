@@ -35,7 +35,7 @@ for the details.
 mise install       # supported path: install the template's Node and pnpm
 pnpm install
 pnpm dev             # local dev server
-pnpm check           # types, build integrity, tests and deck fit
+pnpm check           # types, build integrity and the small course spec
 pnpm check:evidence  # final submission gate
 ```
 
@@ -65,21 +65,22 @@ are rewritten for you, and let the build's link checker catch the rest.
 - `src/content.config.ts` --- the schemas those collections validate against.
 - `src/course-config.ts` --- the validated course record: SLOP code, title,
   description, tags, level, session and dates, with optional learning outcomes.
-  Make it yours first; the home page, course page, navigation and JSON API all
-  read it.
+  The home page, course page, navigation and JSON API all read it. Change its
+  dates alongside the placeholder sessions, lectures and assessments that use
+  them so the course remains internally consistent.
 - `src/pages/` --- generated home and course-record pages, listings and detail
   routes, one ordinary Markdown policies page, and a 404.
 - `src/components/` --- the card grids the listing pages render.
 - `src/decks/` --- slide decks, as markdown. One placeholder deck at
   `/decks/week-01/`, and `theme.css`, which puts them in the same brand as the
-  site. `pnpm decks:check` reports slides whose content doesn't fit.
+  site. The normal build compiles decks; inspect their fit and legibility in
+  the browser at both marking viewports.
 - `src/site-config.ts` --- site name, navigation, licence, and the Slop
   branding.
 - `src/assets/images/` --- starter home/social artwork. Replace it with
   course-specific work, or make a deliberate image-free treatment.
-- `spec/` --- what the checks are for (`README.md`), the shipped invariants
-  (`invariants.test.ts`), and a replaceable worked example (`starter.test.ts`);
-  the spec tests you write live alongside them.
+- `spec/` --- a small course-data baseline, a replaceable worked example, and
+  space for the few course-specific checks you decide are worth maintaining.
 - `CLAUDE.md` --- orients whoever works in this repo, you or a coding agent: the
   content model, what the checks mean, and how to work here. Yours to grow.
 - `PROCESS.md` --- a template for your process overview, showing the
@@ -101,6 +102,7 @@ Every build emits a versioned `dist/api/index.json` and per-entry JSON. This is
 platform plumbing rather than an API-design exercise. The future Slop catalogue
 will use the course record and content nodes to filter and display published
 courses, including their canonical `courses.slop.university/SLOPxxxx/` path.
-The build-time tests verify this contract; do not hand-edit generated JSON.
+The integration emits and validates this contract during the build; do not
+hand-edit generated JSON.
 
 See the course site for how the checks map to each week of the course.

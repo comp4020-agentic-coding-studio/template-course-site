@@ -7,40 +7,21 @@ to deliverables, and the `start` course skill walks your agent through pulling
 the right one. The brief poses the problem; the spec is the fixed contract. Read
 both on the site before you plan or build.
 
-The checks in this directory come in three kinds:
+There are two supplied files here:
 
-## Invariants (shipped, always on)
+## Course coherence (small, shipped baseline)
 
-`invariants.test.ts` asserts things that are true of any good website, however
-you build it and whatever the week's brief asks: a navigation landmark, exactly
-one top-level heading, a document language, a real title, a meta description, an
-`og:image` card, a mobile viewport, and alt text on images. They run against the
-**built** site (`dist/`), so they check what actually ships. Keep them green;
-don't delete them.
-
-Three of them --- the card, the navigation landmark and the single top-level
-heading --- skip slide decks. A deck is a different genre of page: one document
-holding a `<section>` per slide, each with its own heading, and no site chrome
-around it. The build runs its own structural checks over decks instead.
-
-The description and the card are what a link to your site looks like when
-someone shares it. The card check is presence only: a path that doesn't resolve
-shows up in the course gallery, not as a red check, so look at the deployed head
-when you add pages.
-
-## Course-data integrity (shipped, always on)
-
-`data-integrity.test.ts` protects the shared plumbing: API version and canonical
-URL, dates within the teaching period, teacher refs that resolve to people,
-valid learning-outcome IDs, and the required policy headings. Keep it. These
-are structural facts every course and the future catalogue depend on.
+`data-integrity.test.ts` checks only cross-page facts the content schemas and
+build cannot: dated material stays inside the course period, any learning-
+outcome IDs used by assessments exist, and the policy page retains its required
+headings. The build already owns compilation, accessibility, internal links,
+content references, API generation and deck compilation.
 
 ## A worked example (yours to replace)
 
-`starter.test.ts` shows two course-specific spec tests: the assessment listing
-links to every assessment, and assessment weights sum to 100. Both read the
-built site — one the HTML, one the course API. Adapt or replace them as your
-course takes shape. A fact about one course is not a universal invariant.
+`starter.test.ts` shows one course-specific check: assessment weights sum to
+100. Adapt or replace it as your course takes shape. A fact about one course is
+not a universal invariant.
 
 ## Your spec tests (yours to write)
 

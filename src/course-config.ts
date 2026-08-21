@@ -78,11 +78,7 @@ export const courseMeta = slopCourseMetaSchema.parse({
     "One concise paragraph explaining what this course is, who it is for, " +
     "and why somebody would choose to spend a semester taking it.",
   tags: ["replace me"],
-  learningOutcomes: [
-    "state what a graduate of this course can do that they could not do before",
-    "write one outcome per genuinely distinct capability, not one per week",
-    "start each with a verb somebody could assess",
-  ],
+  learningOutcomes: [],
 }) satisfies CourseMetaInput;
 
 export const learningOutcomes = courseMeta.learningOutcomes.map(

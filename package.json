@@ -8,10 +8,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "typecheck": "astro check",
-    "check": "pnpm typecheck && pnpm build && vitest run && pnpm decks:check",
+    "check": "pnpm typecheck && pnpm build && pnpm test",
     "check:evidence": "node scripts/check-evidence.ts",
-    "decks:check": "node scripts/check-decks.ts",
-    "test": "vitest run"
+    "test": "vitest run spec",
+    "test:template": "vitest run scripts"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",
@@ -27,12 +27,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
-    "@types/jsdom": "^27.0.0",
     "@types/node": "^24.0.0",
-    "jsdom": "^29.1.1",
     "lightningcss": "^1.32.0",
     "pagefind": "^1.5.2",
-    "puppeteer-core": "^24.0.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.10"
   },

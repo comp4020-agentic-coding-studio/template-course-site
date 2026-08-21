@@ -48,7 +48,8 @@ is caught before it ships, not after.
 schema validates the `SLOPxxxx` code and level, title, 80--300 character
 description, one to three tags, ANU-style session, year, teaching period and
 optional learning outcomes. It feeds the home page, `/course/`, navigation and
-`/api/index.json`, so fill it in first rather than restating those facts.
+`/api/index.json`, so do not restate those facts. Change the record's dates
+alongside the placeholder sessions, lectures and assessments that use them.
 
 Two orthogonal flags live in every graph collection's schema. `published: false`
 removes an entry from the production build entirely (no page, no listing, no
@@ -77,9 +78,10 @@ deck stylesheet derives its colours from the same brand tokens the site uses, so
 a deck already matches the rest of the site; a colour restated there is how the
 two start to disagree.
 
-`pnpm decks:check` walks every slide in a headless Chrome and reports anything
-that doesn't fit the canvas. Content overflows a slide silently, so run it
-before you call a deck done.
+The normal build compiles every deck and catches invalid MDX or astromotion
+syntax. It cannot decide whether a slide fits well or remains legible: inspect
+every slide in the browser at the desktop and phone marking viewports before
+you call a deck done.
 
 A deck is not a content-collection entry, so it has no `related:` edges. Link it
 from its lecture page with a markdown link (`[Slides](/decks/week-01/)`), which
@@ -91,7 +93,8 @@ The site deploys to `https://<owner>.github.io/<repo>/`, so every internal URL
 carries a `/<repo>/` prefix. `astro.config.ts` derives it at config time from
 `GITHUB_REPOSITORY` (in CI) or the `origin` remote (locally), and
 `scripts/pages-base.ts` holds that logic with tests in
-`spec/pages-base.test.ts`.
+`scripts/pages-base.test.ts`. Those are template-maintainer tests, not part of
+the student-facing course spec.
 
 Nothing to configure --- but a hand-written root-absolute link
 (`href="/sessions/"`) in an `.astro` file skips Astro's base handling, works on
@@ -106,21 +109,24 @@ describes it. Both are placeholders --- replace them and keep the picture
 1200x630, or remove the imagery as part of a coherent image-free treatment. A
 page with artwork of its own overrides the site-wide card with its
 own `socialImage:` frontmatter key. The theme turns whichever applies into the
-`og:image` the invariants look for, and re-encodes it to a JPEG, since the
-scrapers still don't decode the formats the site serves to browsers.
+`og:image` metadata and re-encodes it to a JPEG, since scrapers still don't
+decode the formats the site serves to browsers.
 
 ## The checks
 
-`pnpm check` runs type checking, the production build and its integrity checks,
-the Vitest suite, and the deck fit check. `pnpm check:evidence` is a separate
-gate before you ship: it checks process citations, the required reflection and,
-for Assignment 2, remaining starter copy and imagery. CI adds the secret scan
-and deploy. Read the failure.
+`pnpm check` runs type checking, the production build and a deliberately small
+course-content test suite. `pnpm check:evidence` is a separate gate before you
+ship: it checks process citations, the required reflection and, for Assignment
+2, remaining starter copy and imagery. CI adds the secret scan and deploy. Read
+the failure.
 
 `pnpm build` is itself several checks: it runs axe over every rendered page,
 verifies internal links respect the base path, fails on a dangling content ref,
-and emits the versioned API the catalogue ingests. `spec/data-integrity.test.ts`
-checks its dates, teacher references, outcome IDs and policy shape.
+compiles the decks, and emits the versioned API the catalogue ingests.
+`spec/data-integrity.test.ts` only checks the cross-page course facts the build
+cannot: dates, optional outcome IDs and policy headings. The assessment-weight
+test is a worked example to adapt or replace. Add another test only when it
+protects a real promise peculiar to your course.
 
 `spec/README.md`, `PROCESS.md` and `reflections/README.md` are in this repo and
 say what they are for.

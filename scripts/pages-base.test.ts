@@ -1,9 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { pagesUrl, parseRepoSlug, resolveDeployment } from "../scripts/pages-base.ts";
+import { pagesUrl, parseRepoSlug, resolveDeployment } from "./pages-base.ts";
 
-// The base path is the one setting whose failure is invisible locally: `astro
-// dev` serves at the root either way, and only the deployed sub-path URL shows
-// a wrong answer. So it gets tested rather than eyeballed.
+// This protects template plumbing rather than a decision students make, so it
+// runs in template CI without becoming part of their everyday course checks.
 
 describe("parseRepoSlug", () => {
   it.each([

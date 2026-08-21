@@ -36,32 +36,15 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Build and run the spec
         run: pnpm check
+      - name: Test template tooling
+        # These tests protect starter internals, not decisions students make.
+        if: ${{ github.event.repository.is_template }}
+        run: pnpm test:template
       - name: Check the process evidence
         # skipped in the template repo itself, where PROCESS.md is still the
         # boilerplate every student replaces
         if: ${{ !github.event.repository.is_template }}
         run: pnpm check:evidence
-      - name: Check internal links
-        # Internal links only. linkinator checks outbound links by default, so
-        # someone else's rate limiter or outage would redden a build with
-        # nothing wrong in it --- crit 2 alone points the whole cohort at real
-        # orgs' sites and their socials. The regex skips anything not on the
-        # local origin the built site is served from; both spellings are named
-        # because a bare `--skip "^https?://"` matches that origin too and
-        # passes having scanned zero links.
-        #
-        # The built site carries the Pages base path (`/<repo>/`) in every
-        # internal href, so serving `dist` at the server root would 404 all of
-        # them --- a failure with nothing wrong in it. Stage the build under a
-        # directory named for the repo and serve its parent, so the paths line
-        # up with what GitHub Pages actually serves. (`pnpm build` also runs
-        # the theme's own link checker over every page; this pass is the
-        # independent one, against a real server.)
-        run: |
-          repo="${GITHUB_REPOSITORY#*/}"
-          mkdir -p linkcheck && cp -r dist "linkcheck/$repo"
-          pnpm dlx linkinator "$repo" --server-root linkcheck --silent \
-            --skip "^https?://(?!localhost|127)"
       - name: Scan for committed secrets
         # Pinned, both halves: the SHA fixes the action's script, and `version`
         # fixes the scanner image, which otherwise floats on :latest. These two

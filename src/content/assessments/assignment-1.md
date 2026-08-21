@@ -6,9 +6,6 @@ description:
 week: 6
 due: 2027-04-12T12:00:00+10:00
 weight: 40
-outcomes:
-  - LO1
-  - LO2
 marking:
   mode: weighted
   criteria:

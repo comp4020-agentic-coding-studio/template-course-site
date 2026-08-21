@@ -6,10 +6,6 @@ description:
 week: 12
 due: 2027-05-28T12:00:00+10:00
 weight: 60
-outcomes:
-  - LO1
-  - LO2
-  - LO3
 marking:
   mode: holistic
   description:

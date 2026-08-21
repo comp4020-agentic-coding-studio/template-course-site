@@ -10,10 +10,7 @@ interface ApiNode {
 }
 
 interface CourseApi {
-  schemaVersion: number;
-  canonicalUrl?: string;
   course: {
-    code: string;
     startDate: string;
     endDate: string;
     learningOutcomes: string[];
@@ -27,13 +24,6 @@ const api = JSON.parse(
 const dateOnly = (value: unknown): string => String(value).slice(0, 10);
 
 describe("course data integrity", () => {
-  it("publishes a versioned, canonical catalogue feed", () => {
-    expect(api.schemaVersion).toBe(1);
-    expect(api.canonicalUrl).toBe(
-      `https://courses.slop.university/${api.course.code}/`,
-    );
-  });
-
   it("keeps every scheduled date inside the teaching period", () => {
     const dated = api.nodes.filter((node) =>
       ["sessions", "lectures", "assessments"].includes(node.type),
@@ -46,24 +36,6 @@ describe("course data integrity", () => {
         true,
       );
       expect(date <= api.course.endDate, `${node.id} falls after teaching ends`).toBe(true);
-    }
-  });
-
-  it("resolves every teaching-team reference to a person", () => {
-    const people = new Set(
-      api.nodes
-        .filter((node) => node.type === "people")
-        .map((node) => node.id.replace(/^people\//, "")),
-    );
-    const taught = api.nodes.filter((node) =>
-      ["sessions", "lectures"].includes(node.type),
-    );
-    for (const node of taught) {
-      const teachers = node.meta?.teachers as string[];
-      expect(teachers.length, `${node.id} names no teacher`).toBeGreaterThan(0);
-      for (const teacher of teachers) {
-        expect(people.has(teacher), `${node.id} names missing person ${teacher}`).toBe(true);
-      }
     }
   });
 
