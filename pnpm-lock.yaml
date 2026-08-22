@@ -11,33 +11,27 @@ importers:
       '@astrojs/mdx':
         specifier: ^7.0.0
         version: 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
-      '@astrojs/svelte':
-        specifier: ^9.0.0
-        version: 9.0.1(@types/node@24.13.3)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(esbuild@0.28.2)(svelte@5.56.9)(typescript@6.0.3)(yaml@2.9.0)
       '@iconify-json/iconoir':
         specifier: ^1.2.11
         version: 1.2.11
       astro:
         specifier: ^7.2.0
         version: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
-      astro-course-anu:
-        specifier: git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#astro-course-anu@v0.10.1&path:/packages/astro-course-anu
-        version: git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#c6622f85dbf98586f689c5306b94c9ba8f2b9bd9&path:/packages/astro-course-anu(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
+      astro-course-university:
+        specifier: github:ANUcybernetics/astro-course-university#v0.1.0
+        version: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/a057a36a8fa743dbeb31ebf90679d4df298875c8(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
       astro-theme-slop:
         specifier: github:benswift/astro-theme-slop#v0.1.0
         version: https://codeload.github.com/benswift/astro-theme-slop/tar.gz/96786f0eabfb3e3f0c030d6b1045e831ac799e0a(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
       astro-theme-university:
-        specifier: git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.12.0
-        version: https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/021dbae4f30d1771f0c05371fc2ec239d0707a92(@iconify-json/iconoir@1.2.11)(@types/node@24.13.3)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/6fa2050103f8348b8600a9dded94cd0c1b019cbe(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1))(esbuild@0.28.2)(lightningcss@1.33.0)(pagefind@1.5.2)(svelte@5.56.9)(typescript@6.0.3)
+        specifier: git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.13.0
+        version: https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/6cfc02c68ecfa0e425c41135fc08af9f180cb067(@astrojs/markdown-satteri@0.3.5)(@iconify-json/iconoir@1.2.11)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/1dd0bdca0d08c88a502542f40d4039549a81b14c(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1))(lightningcss@1.33.0)(pagefind@1.5.2)
       astromotion:
-        specifier: git+https://github.com/ANUcybernetics/astromotion.git#v0.21.1
-        version: https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/6fa2050103f8348b8600a9dded94cd0c1b019cbe(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1)
+        specifier: git+https://github.com/ANUcybernetics/astromotion.git#v0.22.0
+        version: https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/1dd0bdca0d08c88a502542f40d4039549a81b14c(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1)
       sharp:
         specifier: ^0.35.3
         version: 0.35.3(@types/node@24.13.3)
-      svelte:
-        specifier: ^5.55.10
-        version: 5.56.9
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.9
@@ -193,14 +187,6 @@ packages:
     resolution: {integrity: sha512-KTivpmnz6lDsC6o9H4+DNm2SrE/GHzw8cNAvEJwAvUT+eoaEnn/4NtbDNfRRaxaJHdp15gf+tfHAWiXR4wB3BA==}
     engines: {node: '>=22.12.0'}
 
-  '@astrojs/svelte@9.0.1':
-    resolution: {integrity: sha512-n5FzIR9Eqs4Kz8O0BIyGfV+wJuAbXRhZazJbq+sdU64Cho83my9/yFUiQyUeGFPnu3nytCg7Dj24LMDsCh31Jg==}
-    engines: {node: '>=22.12.0'}
-    peerDependencies:
-      astro: ^7.0.0
-      svelte: ^5.43.6
-      typescript: ^5.3.3 || ^6.0.0
-
   '@astrojs/telemetry@3.3.3':
     resolution: {integrity: sha512-C1TLn5sPJr0x4vk56piHWKbnqlEB8BKyte5Y45V02U+D7BGO5eMqZDH5aPjnkXQWJggvmsTXxH03QMZ9NgWLzQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
@@ -220,10 +206,6 @@ packages:
     resolution: {integrity: sha512-E8lTAYNB1KW+FH+VGJuZM1ioAx2E6oVlvQFRrf5P8ZZmsiJXYAD9vTFV7yyEURNzgh1dFqMZuO6tUwcARbqFCA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
-
-  '@babel/runtime@7.29.7':
-    resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/types@7.29.8':
     resolution: {integrity: sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg==}
@@ -329,9 +311,6 @@ packages:
   '@csstools/css-tokenizer@4.0.0':
     resolution: {integrity: sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==}
     engines: {node: '>=20.19.0'}
-
-  '@davepagurek/bezier-path@0.0.7':
-    resolution: {integrity: sha512-CVlnCOrV1iy4Z12T756i9l4G6kF7r8uhlnb+xqDemAMmWQB+8Q0b+8VEqIiUfywgZDSiDr18Rm7pZlnA69rE8Q==}
 
   '@emmetio/abbreviation@2.3.3':
     resolution: {integrity: sha512-mgv58UrU3rh4YgbE/TzgLQwJ3pFsHHhCLqY20aJq+9comytTXUDNGG/SMtSeMJdkpxgXSXunBGLD8Boka3JyVA==}
@@ -709,24 +688,8 @@ packages:
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
     engines: {node: '>=18.0.0'}
 
-  '@japont/unicode-range@1.0.0':
-    resolution: {integrity: sha512-BckHvA2XdjRBVAWe2uceNuRf78lBeI28kyWEbfr/Q2pE17POkwuZ6WWY/UMv8FL9iBxhW4xfDoNLM9UVZaTeUQ==}
-
-  '@jridgewell/gen-mapping@0.3.13':
-    resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
-
-  '@jridgewell/remapping@2.3.5':
-    resolution: {integrity: sha512-LI9u/+laYG4Ds1TDKSJW2YPrIlcVYOwi2fUC6xB43lueCjgxV4lffOCZCtYFiH6TNOX+tQKXx97T4IKHbhyHEQ==}
-
-  '@jridgewell/resolve-uri@3.1.2':
-    resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
-    engines: {node: '>=6.0.0'}
-
   '@jridgewell/sourcemap-codec@1.5.5':
     resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
-
-  '@jridgewell/trace-mapping@0.3.31':
-    resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
   '@mdx-js/mdx@3.1.1':
     resolution: {integrity: sha512-f6ZO2ifpwAQIpzGWaBQT2TXxPv6z3RBzQKpVftEWN78Vl/YweF1uwussDx8ECAXVtr3Rs89fKyG9YlzUs9DyGQ==}
@@ -926,18 +889,6 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@sveltejs/acorn-typescript@1.0.13':
-    resolution: {integrity: sha512-wgKggnhZVL9Bfx1OaKKTrYY9BFRk6C8UAkQNUcIv1+llzYrIqy+RZm5HPKzn0NpEBvTVhTqB4kQyllZywsRBRQ==}
-    peerDependencies:
-      acorn: ^8.9.0
-
-  '@sveltejs/vite-plugin-svelte@7.3.0':
-    resolution: {integrity: sha512-QbRoJyD92e9R0ufeQIWRHrCC0ObcqSv/aBDdrQMoU+sypav3cDx5wytdQ6GLdXjEMO6xjrXGzfkUygng8JMv0A==}
-    engines: {node: ^20.19 || ^22.12 || >=24}
-    peerDependencies:
-      svelte: ^5.46.4
-      vite: ^8.0.0-beta.7 || ^8.0.0
-
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
 
@@ -982,9 +933,6 @@ packages:
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
-
-  '@types/trusted-types@2.0.7':
-    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -1058,10 +1006,6 @@ packages:
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
 
-  acorn-walk@8.3.5:
-    resolution: {integrity: sha512-HEHNfbars9v4pgpW6SO1KSPkfoS0xVOM/9UzkJltjlsHZmJasxg8aXkuZa7SMf8vKGIBhpUsPluQSqhJFCqebw==}
-    engines: {node: '>=0.4.0'}
-
   acorn@8.18.0:
     resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
     engines: {node: '>=0.4.0'}
@@ -1114,10 +1058,6 @@ packages:
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
 
-  aria-query@5.3.1:
-    resolution: {integrity: sha512-Z/ZeOgVl7bcSYZ/u/rh0fOpvEpq//LZmdbkXyc7syVzjPAhfOa9ebsdTSjEBDU4vs5nC98Kfduj1uFo0qyET3g==}
-    engines: {node: '>= 0.4'}
-
   aria-query@5.3.2:
     resolution: {integrity: sha512-COROpnaoap1E2F000S62r6A60uHZnmlvomhfyT2DlTcrY1OrBKn2UhH7qn5wTC9zMvD0AY7csdPSNwKP+7WiQw==}
     engines: {node: '>= 0.4'}
@@ -1141,9 +1081,9 @@ packages:
     resolution: {integrity: sha512-TYfDUZl0iYq1dVZO+R0appTBkDmSMsOrafgWJMGqoD4xVd74imTRdzekE6tA8+6AIi+/GXMGlr/im0unLD1LRg==}
     engines: {node: '>=18'}
 
-  astro-course-anu@git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#c6622f85dbf98586f689c5306b94c9ba8f2b9bd9&path:/packages/astro-course-anu:
-    resolution: {commit: c6622f85dbf98586f689c5306b94c9ba8f2b9bd9, path: /packages/astro-course-anu, repo: https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git, type: git}
-    version: 0.10.1
+  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/a057a36a8fa743dbeb31ebf90679d4df298875c8:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/a057a36a8fa743dbeb31ebf90679d4df298875c8}
+    version: 0.1.0
     engines: {node: '>=24'}
     peerDependencies:
       astro: ^7.0.0
@@ -1158,9 +1098,9 @@ packages:
     peerDependencies:
       astro: ^7.0.0
 
-  astro-theme-university@https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/021dbae4f30d1771f0c05371fc2ec239d0707a92:
-    resolution: {gitHosted: true, integrity: sha512-65jr/QPupLBVc+hXIYSwPqBHNz32kbvc4vVqtLPnxZ4uWQQ+0FGLP9t3M+nk+XqTg5UdCO7XT3g21L9gW/V/eQ==, tarball: https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/021dbae4f30d1771f0c05371fc2ec239d0707a92}
-    version: 0.12.0
+  astro-theme-university@https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/6cfc02c68ecfa0e425c41135fc08af9f180cb067:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/6cfc02c68ecfa0e425c41135fc08af9f180cb067}
+    version: 0.13.0
     engines: {node: '>=24'}
     peerDependencies:
       '@iconify-json/iconoir': ^1.2.0
@@ -1168,7 +1108,6 @@ packages:
       astromotion: '>=0.1.0'
       lightningcss: ^1.32.0
       pagefind: ^1.0.0
-      svelte: ^5.0.0
     peerDependenciesMeta:
       astromotion:
         optional: true
@@ -1185,9 +1124,9 @@ packages:
       '@astrojs/markdown-remark':
         optional: true
 
-  astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/6fa2050103f8348b8600a9dded94cd0c1b019cbe:
-    resolution: {gitHosted: true, integrity: sha512-5ePUPEQMIGtLlOxNM2cCZYz+zAMo74p71kkfhLQYIrK4PU/hS6r74nnw3y8saRJt54Ues322bHhTYy5XABULYw==, tarball: https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/6fa2050103f8348b8600a9dded94cd0c1b019cbe}
-    version: 0.21.1
+  astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/1dd0bdca0d08c88a502542f40d4039549a81b14c:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/1dd0bdca0d08c88a502542f40d4039549a81b14c}
+    version: 0.22.0
     engines: {node: '>=24'}
     hasBin: true
     peerDependencies:
@@ -1348,9 +1287,6 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
-  colorjs.io@0.6.1:
-    resolution: {integrity: sha512-8lyR2wHzuIykCpqHKgluGsqQi5iDm3/a2IgP2GBZrasn2sBRkE4NOGsglZxWLs/jZQoNkmA/KM/8NV16rLUdBg==}
-
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
 
@@ -1445,13 +1381,6 @@ packages:
 
   decode-named-character-reference@1.3.0:
     resolution: {integrity: sha512-GtpQYB283KrPp6nRw50q3U9/VfOutZOe103qlN7BPP6Ad27xYnOIWv4lPzo8HCAL+mMZofJ9KEy30fq6MfaK6Q==}
-
-  dedent-js@1.0.1:
-    resolution: {integrity: sha512-OUepMozQULMLUmhxS95Vudo0jb0UchLimi3+pQ2plj61Fcy8axbP9hbiD4Sz6DPqn6XG3kfmziVfQ1rSys5AJQ==}
-
-  deepmerge@4.3.1:
-    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
-    engines: {node: '>=0.10.0'}
 
   defu@6.1.7:
     resolution: {integrity: sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==}
@@ -1575,21 +1504,10 @@ packages:
     engines: {node: '>=6.0'}
     hasBin: true
 
-  esm-env@1.2.2:
-    resolution: {integrity: sha512-Epxrv+Nr/CaL4ZcFGPJIYLWFom+YeV1DqMLHJoEd9SYRxNbaFruBwfEX/kkHUJf55j2+TUbmDcmuilbP1TmXHA==}
-
   esprima@4.0.1:
     resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
     engines: {node: '>=4'}
     hasBin: true
-
-  esrap@2.3.4:
-    resolution: {integrity: sha512-CHnJXZDfBeOAjLIGNy/0BEsmDu5+irHgUXRW9pGptxCbO3uyjJ98crilzFgiBqizW94UodjX3GAPLg/dhEnUfA==}
-    peerDependencies:
-      '@typescript-eslint/types': ^8.2.0
-    peerDependenciesMeta:
-      '@typescript-eslint/types':
-        optional: true
 
   estraverse@5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
@@ -1729,9 +1647,6 @@ packages:
     resolution: {integrity: sha512-b1O07XYq8eRuVzBNgJLstU6FYc1tS6wnMtF1I1D9lE8LxZSOGZ7LhxN54yPP6mGw5f2CkXY2BQUL9Fx41qvcIg==}
     engines: {node: '>= 14'}
 
-  gifenc@1.0.3:
-    resolution: {integrity: sha512-xdr6AdrfGBcfzncONUOlXMBuc5wJDtOueE3c5rdG0oNgtINLD+f2iFZltrBRZYzACRbKr+mSVU/x98zv2u3jmw==}
-
   github-slugger@2.0.0:
     resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
 
@@ -1820,12 +1735,6 @@ packages:
     resolution: {integrity: sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==}
     engines: {node: '>= 14'}
 
-  i18next-browser-languagedetector@4.3.1:
-    resolution: {integrity: sha512-KIToAzf8zwWvacgnRwJp63ase26o24AuNUlfNVJ5YZAFmdGhsJpmFClxXPuk9rv1FMI4lnc8zLSqgZPEZMrW4g==}
-
-  i18next@19.9.2:
-    resolution: {integrity: sha512-0i6cuo6ER6usEOtKajUUDj92zlG+KArFia0857xxiEHAQcUwh/RtOQocui1LPJwunSYT574Pk64aNva1kwtxZg==}
-
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
@@ -1880,9 +1789,6 @@ packages:
   is-potential-custom-element-name@1.0.1:
     resolution: {integrity: sha512-bCYeRA2rVibKZd+s2625gGnGF/t7DSqDs4dP7CrLA1m7jKWz6pps0LpYLJN8Q64HtmPKJ1hrN3nzPNKFEKOUiQ==}
 
-  is-reference@3.0.3:
-    resolution: {integrity: sha512-ixkJoqQvAP88E6wLydLGGqCJsrFUnqoH6HnaczB8XmDH1oaWU+xxdptvikTgaEhtZ53Ky6YXiBuUI2WXLMCwjw==}
-
   js-yaml@4.3.1:
     resolution: {integrity: sha512-CY6crGq313MX8GkwvB7tzgp99vjQxY1++5y10/BKN/GUfHqWaOGQMNZkBvqSzsZKWk/ijwHlWzzkLulsGHhjWQ==}
     hasBin: true
@@ -1911,9 +1817,6 @@ packages:
 
   kolorist@1.8.0:
     resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
-
-  libtess@1.2.2:
-    resolution: {integrity: sha512-Nps8HPeVVcsmJxUvFLKVJcCgcz+1ajPTXDVAVPs6+giOQP4AHV31uZFFkh+CKow/bkB7GbZWKmwmit7myaqDSw==}
 
   lightningcss-android-arm64@1.33.0:
     resolution: {integrity: sha512-gEpRTalKdosp4Bb8qWtc2iOgE5SeIHlpS1up9bFq2wAyYhl1UdTObYiHe98zEM9SQvSoqQZ1IQD0JNpg3Ml5pg==}
@@ -2004,9 +1907,6 @@ packages:
   local-pkg@1.2.1:
     resolution: {integrity: sha512-++gUqRDEvcnN6Zhqrr+y/CkVEHhlrR96vZn3nZZPYzMcBUyBtTKzB9NadClFIsIVSsu+3i9tfk/erqy9kAmt7Q==}
     engines: {node: '>=14'}
-
-  locate-character@3.0.0:
-    resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
   loglevel@1.9.2:
     resolution: {integrity: sha512-HgMmCqIJSAKqo68l0rS2AanEWfkxaZ5wNiEFb5ggm08lDs9Xl2KxBlX3PTcaD2chBM1gXAYf491/M2Rv8Jwayg==}
@@ -2300,9 +2200,6 @@ packages:
   ohash@2.0.12:
     resolution: {integrity: sha512-65S/5gk9YSsaRjcyf7Nfa6h/d3E8/1gslpXfI4W7Dxn/oap8IKRuNT5VXkLQ1YFKIEg4apRY4Pj6aiwFzrDdmw==}
 
-  omggif@1.0.10:
-    resolution: {integrity: sha512-LMJTtvgc/nugXj0Vcrrs68Mn2D1r0zf630VNtqtpI1FEO7e+O9FP4gqs9AcnBaSEeoHIPm28u6qgPR0oyEpGSw==}
-
   once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
 
@@ -2324,9 +2221,6 @@ packages:
     resolution: {integrity: sha512-AxTM2wDGORHGEkPCt8yqxOTMgpfbEHqF51f/5fJCmwFC3C/zNcGT63SymH2ttOAaiIws2zVg4+izQCjrakcwHg==}
     engines: {node: '>=20'}
 
-  p5@2.3.2:
-    resolution: {integrity: sha512-DlX4rVQb9R2Z16XtTTNN/1zf7FZWy55ApA6ZS0GNJBDraymJcd9kbxmpIDKYnVxiXrchgb2YckWsmm+TSEJVPg==}
-
   pac-proxy-agent@7.2.0:
     resolution: {integrity: sha512-TEB8ESquiLMc0lV8vcd5Ql/JAKAoyzHFXaStwjkzpOpC5Yv+pIzLfHvjTSdf3vpa2bMiUQrg9i6276yn8666aA==}
     engines: {node: '>= 14'}
@@ -2341,9 +2235,6 @@ packages:
   pagefind@1.5.2:
     resolution: {integrity: sha512-XTUaK0hXMCu2jszWE584JGQT7y284TmMV9l/HX3rnG5uo3rHI/uHU56XTyyyPFjeWEBxECbAi0CaFDJOONtG0Q==}
     hasBin: true
-
-  pako@2.2.0:
-    resolution: {integrity: sha512-zJq6RP/5q+TO2OpFV3FHzlPnFjmkb7Nc99a5SNjJE+uu/PkpChs+NIZSSzbBoD+6kjiISXjfYdwj1ZRQ81dz/w==}
 
   parse-entities@4.0.2:
     resolution: {integrity: sha512-GG2AQYWoLgL877gQIKeRPGO1xF9+eG1ujIb5soS5gPvLQ1y2o8FL90w2QWNdf9I361Mpp7726c+lj3U0qK1uGw==}
@@ -2578,9 +2469,6 @@ packages:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
 
-  scule@1.3.0:
-    resolution: {integrity: sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==}
-
   semver@7.8.5:
     resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
@@ -2677,16 +2565,6 @@ packages:
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
-
-  svelte2tsx@0.7.61:
-    resolution: {integrity: sha512-EpQ/+UHITBULeUojx/LLD3uTYasZXcX1BrqlrzfLUnT9vdUhaOWK59a3ryWcFU8L0sY1SP+gRhJ2Beiis98+qw==}
-    peerDependencies:
-      svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
-      typescript: ^4.9.4 || ^5.0.0 || ^6.0.0
-
-  svelte@5.56.9:
-    resolution: {integrity: sha512-VT8kSnlEg8069w7AiCcAk3Yf5xvMnrGTagVOmU/OpOLHaHnNqXhWZCH/4EVga/bT/HtWhvE6/fHrXLErx7OnJA==}
-    engines: {node: '>=18'}
 
   svgo@3.3.4:
     resolution: {integrity: sha512-GsNRis4e8jxn2Y9ENz/8lbJ93CstG8svtMnuRaHbiF2LTJ5tK0/q3t/URPq9Zc7zVWBJnNnJMIp6bevK7bSmNg==}
@@ -3222,9 +3100,6 @@ packages:
     resolution: {integrity: sha512-4LCcse/U2MHZ63HAJVE+v71o7yOdIe4cZ70Wpf8D/IyjDKYQLV5GD46B+hSTjJsvV5PztjvHoU580EftxjDZFQ==}
     engines: {node: '>=12.20'}
 
-  zimmerframe@1.1.4:
-    resolution: {integrity: sha512-B58NGBEoc8Y9MWWCQGl/gq9xBCe4IiKM0a2x7GZdQKOW5Exr8S1W24J6OgM1njK8xCRGvAJIL/MxXHf6SkmQKQ==}
-
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
@@ -3426,29 +3301,6 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/svelte@9.0.1(@types/node@24.13.3)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(esbuild@0.28.2)(svelte@5.56.9)(typescript@6.0.3)(yaml@2.9.0)':
-    dependencies:
-      '@sveltejs/vite-plugin-svelte': 7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(yaml@2.9.0))
-      astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
-      svelte: 5.56.9
-      svelte2tsx: 0.7.61(svelte@5.56.9)(typescript@6.0.3)
-      typescript: 6.0.3
-      vite: 8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(yaml@2.9.0))
-    transitivePeerDependencies:
-      - '@types/node'
-      - '@vitejs/devtools'
-      - esbuild
-      - jiti
-      - less
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - yaml
-
   '@astrojs/telemetry@3.3.3':
     dependencies:
       ci-info: 4.4.0
@@ -3467,8 +3319,6 @@ snapshots:
   '@babel/parser@7.29.8':
     dependencies:
       '@babel/types': 7.29.8
-
-  '@babel/runtime@7.29.7': {}
 
   '@babel/types@7.29.8':
     dependencies:
@@ -3549,8 +3399,6 @@ snapshots:
       css-tree: 3.2.1
 
   '@csstools/css-tokenizer@4.0.0': {}
-
-  '@davepagurek/bezier-path@0.0.7': {}
 
   '@emmetio/abbreviation@2.3.3':
     dependencies:
@@ -3819,26 +3667,7 @@ snapshots:
     dependencies:
       minipass: 7.1.3
 
-  '@japont/unicode-range@1.0.0': {}
-
-  '@jridgewell/gen-mapping@0.3.13':
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
-      '@jridgewell/trace-mapping': 0.3.31
-
-  '@jridgewell/remapping@2.3.5':
-    dependencies:
-      '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.31
-
-  '@jridgewell/resolve-uri@3.1.2': {}
-
   '@jridgewell/sourcemap-codec@1.5.5': {}
-
-  '@jridgewell/trace-mapping@0.3.31':
-    dependencies:
-      '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.5
 
   '@mdx-js/mdx@3.1.1':
     dependencies:
@@ -4025,19 +3854,6 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@sveltejs/acorn-typescript@1.0.13(acorn@8.18.0)':
-    dependencies:
-      acorn: 8.18.0
-
-  '@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.56.9)(vite@8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(yaml@2.9.0))':
-    dependencies:
-      deepmerge: 4.3.1
-      magic-string: 1.2.0
-      obug: 2.1.4
-      svelte: 5.56.9
-      vite: 8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(yaml@2.9.0)
-      vitefu: 1.1.3(vite@8.2.1(@types/node@24.13.3)(esbuild@0.28.2)(yaml@2.9.0))
-
   '@tootallnate/quickjs-emscripten@0.23.0':
     optional: true
 
@@ -4091,8 +3907,6 @@ snapshots:
       undici-types: 7.18.2
 
   '@types/tough-cookie@4.0.5': {}
-
-  '@types/trusted-types@2.0.7': {}
 
   '@types/unist@2.0.11': {}
 
@@ -4200,10 +4014,6 @@ snapshots:
     dependencies:
       acorn: 8.18.0
 
-  acorn-walk@8.3.5:
-    dependencies:
-      acorn: 8.18.0
-
   acorn@8.18.0: {}
 
   agent-base@7.1.4:
@@ -4246,8 +4056,6 @@ snapshots:
 
   argparse@2.0.1: {}
 
-  aria-query@5.3.1: {}
-
   aria-query@5.3.2: {}
 
   array-iterate@2.0.1: {}
@@ -4267,7 +4075,7 @@ snapshots:
       node-html-parser: 7.1.0
       p-limit: 7.3.1
 
-  astro-course-anu@git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#c6622f85dbf98586f689c5306b94c9ba8f2b9bd9&path:/packages/astro-course-anu(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)):
+  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/a057a36a8fa743dbeb31ebf90679d4df298875c8(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)):
     dependencies:
       astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
       yaml: 2.9.0
@@ -4284,13 +4092,11 @@ snapshots:
     dependencies:
       astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
 
-  astro-theme-university@https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/021dbae4f30d1771f0c05371fc2ec239d0707a92(@iconify-json/iconoir@1.2.11)(@types/node@24.13.3)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/6fa2050103f8348b8600a9dded94cd0c1b019cbe(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1))(esbuild@0.28.2)(lightningcss@1.33.0)(pagefind@1.5.2)(svelte@5.56.9)(typescript@6.0.3):
+  astro-theme-university@https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/6cfc02c68ecfa0e425c41135fc08af9f180cb067(@astrojs/markdown-satteri@0.3.5)(@iconify-json/iconoir@1.2.11)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/1dd0bdca0d08c88a502542f40d4039549a81b14c(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1))(lightningcss@1.33.0)(pagefind@1.5.2):
     dependencies:
       '@astro-community/astro-embed-youtube': 0.5.10
       '@astrojs/markdown-remark': 7.2.2
-      '@astrojs/markdown-satteri': 0.3.5
       '@astrojs/mdx': 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
-      '@astrojs/svelte': 9.0.1(@types/node@24.13.3)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(esbuild@0.28.2)(svelte@5.56.9)(typescript@6.0.3)(yaml@2.9.0)
       '@iconify-json/iconoir': 1.2.11
       '@types/jsdom': 28.0.3
       astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
@@ -4300,34 +4106,21 @@ snapshots:
       jsdom: 29.1.1
       lightningcss: 1.33.0
       linkedom: 0.18.13
-      p5: 2.3.2
       rehype-autolink-headings: 7.1.0
       rehype-slug: 6.0.0
       remark-custom-heading-id: 2.0.0
       remark-directive: 4.0.0
       remark-smartypants: 3.0.3
-      svelte: 5.56.9
       unist-util-visit: 5.1.0
       yaml: 2.9.0
     optionalDependencies:
-      astromotion: https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/6fa2050103f8348b8600a9dded94cd0c1b019cbe(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1)
+      astromotion: https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/1dd0bdca0d08c88a502542f40d4039549a81b14c(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1)
       pagefind: 1.5.2
     transitivePeerDependencies:
+      - '@astrojs/markdown-satteri'
       - '@noble/hashes'
-      - '@types/node'
-      - '@vitejs/devtools'
       - canvas
-      - esbuild
-      - jiti
-      - less
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
       - supports-color
-      - terser
-      - tsx
-      - typescript
 
   astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0):
     dependencies:
@@ -4421,11 +4214,12 @@ snapshots:
       - uploadthing
       - yaml
 
-  astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/6fa2050103f8348b8600a9dded94cd0c1b019cbe(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1):
+  astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/1dd0bdca0d08c88a502542f40d4039549a81b14c(@astrojs/mdx@7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(puppeteer-core@24.43.1):
     dependencies:
       '@astrojs/mdx': 7.0.5(@astrojs/markdown-satteri@0.3.5)(astro@7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
       '@qrgrid/core': 0.2.4
       astro: 7.2.2(@astrojs/markdown-remark@7.2.2)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
+      linkedom: 0.18.13
       perfect-freehand: 1.2.3
       remark-frontmatter: 5.0.0
       remark-gfm: 4.0.1
@@ -4439,6 +4233,7 @@ snapshots:
     optionalDependencies:
       puppeteer-core: 24.43.1
     transitivePeerDependencies:
+      - canvas
       - supports-color
 
   axe-core@4.13.0: {}
@@ -4583,8 +4378,6 @@ snapshots:
 
   color-name@1.1.4: {}
 
-  colorjs.io@0.6.1: {}
-
   comma-separated-tokens@2.0.3: {}
 
   commander@11.1.0: {}
@@ -4669,10 +4462,6 @@ snapshots:
   decode-named-character-reference@1.3.0:
     dependencies:
       character-entities: 2.0.2
-
-  dedent-js@1.0.1: {}
-
-  deepmerge@4.3.1: {}
 
   defu@6.1.7: {}
 
@@ -4821,16 +4610,13 @@ snapshots:
       esutils: 2.0.3
     optionalDependencies:
       source-map: 0.6.1
+    optional: true
 
-  esm-env@1.2.2: {}
+  esprima@4.0.1:
+    optional: true
 
-  esprima@4.0.1: {}
-
-  esrap@2.3.4:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
-
-  estraverse@5.3.0: {}
+  estraverse@5.3.0:
+    optional: true
 
   estree-util-attach-comments@3.0.0:
     dependencies:
@@ -4865,7 +4651,8 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.9
 
-  esutils@2.0.3: {}
+  esutils@2.0.3:
+    optional: true
 
   eventemitter3@5.0.4: {}
 
@@ -4978,8 +4765,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
     optional: true
-
-  gifenc@1.0.3: {}
 
   github-slugger@2.0.0: {}
 
@@ -5176,14 +4961,6 @@ snapshots:
       - supports-color
     optional: true
 
-  i18next-browser-languagedetector@4.3.1:
-    dependencies:
-      '@babel/runtime': 7.29.7
-
-  i18next@19.9.2:
-    dependencies:
-      '@babel/runtime': 7.29.7
-
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
@@ -5222,10 +4999,6 @@ snapshots:
   is-plain-obj@4.1.0: {}
 
   is-potential-custom-element-name@1.0.1: {}
-
-  is-reference@3.0.3:
-    dependencies:
-      '@types/estree': 1.0.9
 
   js-yaml@4.3.1:
     dependencies:
@@ -5266,8 +5039,6 @@ snapshots:
   kleur@4.1.5: {}
 
   kolorist@1.8.0: {}
-
-  libtess@1.2.2: {}
 
   lightningcss-android-arm64@1.33.0:
     optional: true
@@ -5333,8 +5104,6 @@ snapshots:
       mlly: 1.8.2
       pkg-types: 2.3.1
       quansync: 0.2.11
-
-  locate-character@3.0.0: {}
 
   loglevel@1.9.2: {}
 
@@ -5919,8 +5688,6 @@ snapshots:
 
   ohash@2.0.12: {}
 
-  omggif@1.0.10: {}
-
   once@1.4.0:
     dependencies:
       wrappy: 1.0.2
@@ -5943,22 +5710,6 @@ snapshots:
       p-timeout: 7.0.1
 
   p-timeout@7.0.1: {}
-
-  p5@2.3.2:
-    dependencies:
-      '@davepagurek/bezier-path': 0.0.7
-      '@japont/unicode-range': 1.0.0
-      acorn: 8.18.0
-      acorn-walk: 8.3.5
-      colorjs.io: 0.6.1
-      escodegen: 2.1.0
-      gifenc: 1.0.3
-      i18next: 19.9.2
-      i18next-browser-languagedetector: 4.3.1
-      libtess: 1.2.2
-      omggif: 1.0.10
-      pako: 2.2.0
-      zod: 4.4.3
 
   pac-proxy-agent@7.2.0:
     dependencies:
@@ -5991,8 +5742,6 @@ snapshots:
       '@pagefind/linux-x64': 1.5.2
       '@pagefind/windows-arm64': 1.5.2
       '@pagefind/windows-x64': 1.5.2
-
-  pako@2.2.0: {}
 
   parse-entities@4.0.2:
     dependencies:
@@ -6364,8 +6113,6 @@ snapshots:
     dependencies:
       xmlchars: 2.2.0
 
-  scule@1.3.0: {}
-
   semver@7.8.5: {}
 
   sharp@0.35.3(@types/node@24.13.3):
@@ -6502,34 +6249,6 @@ snapshots:
   supports-color@7.2.0:
     dependencies:
       has-flag: 4.0.0
-
-  svelte2tsx@0.7.61(svelte@5.56.9)(typescript@6.0.3):
-    dependencies:
-      dedent-js: 1.0.1
-      scule: 1.3.0
-      svelte: 5.56.9
-      typescript: 6.0.3
-
-  svelte@5.56.9:
-    dependencies:
-      '@jridgewell/remapping': 2.3.5
-      '@jridgewell/sourcemap-codec': 1.5.5
-      '@sveltejs/acorn-typescript': 1.0.13(acorn@8.18.0)
-      '@types/estree': 1.0.9
-      '@types/trusted-types': 2.0.7
-      acorn: 8.18.0
-      aria-query: 5.3.1
-      axobject-query: 4.1.0
-      clsx: 2.1.1
-      devalue: 5.9.0
-      esm-env: 1.2.2
-      esrap: 2.3.4
-      is-reference: 3.0.3
-      locate-character: 3.0.0
-      magic-string: 0.30.21
-      zimmerframe: 1.1.4
-    transitivePeerDependencies:
-      - '@typescript-eslint/types'
 
   svgo@3.3.4:
     dependencies:
@@ -7017,8 +6736,6 @@ snapshots:
       fd-slicer: 1.1.0
 
   yocto-queue@1.2.2: {}
-
-  zimmerframe@1.1.4: {}
 
   zod@3.25.76:
     optional: true

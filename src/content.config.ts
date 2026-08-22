@@ -1,7 +1,7 @@
 import { defineCollection, reference } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
-import { courseNodeSchema } from "astro-course-anu/schemas";
+import { courseNodeSchema } from "astro-course-university/schemas";
 
 const weekSchema = z.coerce.number().int().min(1).max(12);
 const courseNodeLoader = (dir: string) =>

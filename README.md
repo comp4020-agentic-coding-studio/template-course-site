@@ -7,8 +7,8 @@ course skill clones it for you; from there, design your course and deploy the
 site to GitHub Pages.
 
 It ships as a working course website for **Slop University**, the course's
-running fictional institution: an Astro build on the same theme package this
-course's own website uses, wearing the Slop identity instead of the ANU one. The
+running fictional institution: an Astro build on the same neutral theme package
+this course's own website uses, wearing the Slop identity. The
 structure is real and the content is placeholder. Deciding what the course is,
 and what shape its content takes, is your job.
 

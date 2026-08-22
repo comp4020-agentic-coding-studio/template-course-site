@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import courseGraph from "astro-course-anu";
+import courseGraph from "astro-course-university";
 import universityTheme from "astro-theme-university";
 import { astromotion, deckRemarkPlugins } from "astromotion";
 import { courseMeta } from "./src/course-config.ts";
@@ -20,8 +20,8 @@ export default defineConfig({
   integrations: [
     universityTheme({
       defaultLayout: "src/layouts/PageLayout.astro",
-      // The whole brand swap: three colour tokens and a set of lockups. Never
-      // import astro-theme-anu here --- the ANU identity is not yours to wear.
+      // The whole brand choice: three colour tokens and a set of lockups. Keep
+      // institutional brand packages and assets out of this fictional site.
       brandCss: "astro-theme-slop/slop.css",
       imageFormat: "avif",
       llmsTxt: true,

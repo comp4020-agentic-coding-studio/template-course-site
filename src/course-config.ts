@@ -1,4 +1,4 @@
-import type { CourseMetaInput } from "astro-course-anu";
+import type { CourseMetaInput } from "astro-course-university";
 import { z } from "astro/zod";
 
 export const COURSE_SESSIONS = [

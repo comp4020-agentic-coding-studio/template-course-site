@@ -15,15 +15,13 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",
-    "@astrojs/svelte": "^9.0.0",
     "@iconify-json/iconoir": "^1.2.11",
     "astro": "^7.2.0",
-    "astro-course-anu": "git+https://gitlab.anu.edu.au/u2548636/astro-theme-anu.git#astro-course-anu@v0.10.1&path:/packages/astro-course-anu",
+    "astro-course-university": "github:ANUcybernetics/astro-course-university#v0.1.0",
     "astro-theme-slop": "github:benswift/astro-theme-slop#v0.1.0",
-    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.12.0",
-    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.21.1",
-    "sharp": "^0.35.3",
-    "svelte": "^5.55.10"
+    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.13.0",
+    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.22.0",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",

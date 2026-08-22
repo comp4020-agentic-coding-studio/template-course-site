@@ -46,7 +46,7 @@ is caught before it ships, not after.
 
 `src/course-config.ts` is the single source for the course record. Its strict
 schema validates the `SLOPxxxx` code and level, title, 80--300 character
-description, one to three tags, ANU-style session, year, teaching period and
+description, one to three tags, session label, year, teaching period and
 optional learning outcomes. It feeds the home page, `/course/`, navigation and
 `/api/index.json`, so do not restate those facts. Change the record's dates
 alongside the placeholder sessions, lectures and assessments that use them.
