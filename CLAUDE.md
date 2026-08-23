@@ -14,15 +14,6 @@ The structure here is real and the content is placeholder. Designing the course
 --- what it teaches, how it's assessed, what its teaching sessions are and what
 they're called --- is the work.
 
-## How to work in here
-
-- Keep the dev server running (`pnpm dev`) so you see changes as you make them.
-- Run `pnpm check` before you push and `pnpm check:evidence` before submission.
-- Open the page in a browser and look at it. The rendered page is the truth;
-  your mental model of it isn't.
-- When a check fails, read its output before you change anything.
-- Never commit a red state.
-
 ## The content model
 
 Content is Markdown with frontmatter under `src/content/`, in four collections
@@ -58,13 +49,10 @@ graph edge) while leaving it visible in `pnpm dev`, so you can stage content.
 
 The schemas validate the keys they declare and pass through the ones they don't.
 A key you invent in a node's frontmatter survives validation and lands in that
-node's `meta` object in the generated API --- put `prereq: week-03` on a session
-and it comes back at `/api/sessions/<slug>.json` under `meta.prereq`, where a
-test in `spec/` can assert on it. That is how a fact peculiar to your course ---
-a progression rule, a required kit, a cohort restriction --- becomes data the
-site and its checks can both read, rather than prose only a person can. The
-reserved names are `title`, `description`, `tags`, `related`, `links`, `spec`
-and `published`; everything else is yours.
+node's `meta` object in the generated API, so a fact peculiar to your course can
+be data the site reads rather than prose only a person can. The reserved names
+are `title`, `description`, `tags`, `related`, `links`, `spec` and `published`;
+everything else is yours.
 
 ## Naming teaching sessions
 
@@ -88,9 +76,8 @@ a deck already matches the rest of the site; a colour restated there is how the
 two start to disagree.
 
 The normal build compiles every deck and catches invalid MDX or astromotion
-syntax. It cannot decide whether a slide fits well or remains legible: inspect
-every slide in the browser at the desktop and phone marking viewports before you
-call a deck done.
+syntax. Nothing checks whether a slide fits or stays legible; that only shows up
+in a browser, at the two marking viewports.
 
 A deck is not a content-collection entry, so it has no `related:` edges. Link it
 from its lecture page with a markdown link (`[Slides](/decks/week-01/)`), which
@@ -124,30 +111,25 @@ decode the formats the site serves to browsers.
 ## The checks
 
 `pnpm check` runs type checking, the production build and a deliberately small
-course-content test suite. `pnpm check:evidence` is a separate gate before you
-ship: it checks process citations, the required reflection and, for Assignment
-2, every tracked `STARTER_CONTENT` fragment and unchanged key imagery. Remove a
+course-content test suite, and `pnpm check:evidence` is the extra gate before
+you ship: process citations, the required reflection and, for Assignment 2,
+every tracked `STARTER_CONTENT` fragment and unchanged key imagery. Remove a
 fragment's marker when you replace that fragment. CI adds the secret scan and
-deploy. Read the failure.
+the deploy.
 
 `pnpm build` is itself several checks: it runs axe over every rendered page,
 verifies internal links respect the base path, fails on a dangling content ref,
 compiles the decks, and emits the versioned API the catalogue ingests.
 `spec/data-integrity.test.ts` only checks the cross-page course facts the build
-cannot: dates, optional outcome IDs and policy headings. The assessment-weight
-test is a worked example to adapt or replace. Add another test only when it
-protects a real promise peculiar to your course.
+cannot: dates, optional outcome IDs and policy headings.
 
 `spec/README.md`, `PROCESS.md` and `reflections/README.md` are in this repo and
 say what they are for.
 
 ## This file is yours
 
-A starting point, not a rulebook. As you learn what your site needs --- a
-convention the work has to hold to, a sensor that keeps catching you out, a fact
-about the stack that is easy to get wrong --- write it down here. Growing this
-file is the work.
-
-This file and any sensors you wire into `check` are your harness: both carry
-into the next repo, and the site itself doesn't. `spec/README.md` draws the
-line.
+A starting point, not a rulebook: what you add to it is the harness, and the
+harness is assessed. This file and the sensors you wire into `check` carry
+across the course --- both come with you into next week's repo. The prototype
+doesn't: source, and the tests answering this week's published spec, stay
+behind. `spec/README.md` draws the line.
