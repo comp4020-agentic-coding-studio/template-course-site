@@ -60,9 +60,8 @@ graph edge) while leaving it visible in `pnpm dev`, so you can stage content.
 
 Keep the collection key, refs and URL as `sessions`. Choose what students see
 --- Labs, Studios, Workshops, Crits, or something else --- with `sessionLabels`
-in `src/site-config.ts`. The stable
-internal name is part of the catalogue contract; the visible language is a
-course-design choice.
+in `src/site-config.ts`. The stable internal name is part of the catalogue
+contract; the visible language is a course-design choice.
 
 ## Slides
 
@@ -80,8 +79,8 @@ two start to disagree.
 
 The normal build compiles every deck and catches invalid MDX or astromotion
 syntax. It cannot decide whether a slide fits well or remains legible: inspect
-every slide in the browser at the desktop and phone marking viewports before
-you call a deck done.
+every slide in the browser at the desktop and phone marking viewports before you
+call a deck done.
 
 A deck is not a content-collection entry, so it has no `related:` edges. Link it
 from its lecture page with a markdown link (`[Slides](/decks/week-01/)`), which
@@ -107,8 +106,8 @@ The image people see when a link to the site is shared comes from `socialImage:`
 in `src/site-config.ts`, pointing at a `/src/assets/...` path; `socialImageAlt:`
 describes it. Both are placeholders --- replace them and keep the picture
 1200x630, or remove the imagery as part of a coherent image-free treatment. A
-page with artwork of its own overrides the site-wide card with its
-own `socialImage:` frontmatter key. The theme turns whichever applies into the
+page with artwork of its own overrides the site-wide card with its own
+`socialImage:` frontmatter key. The theme turns whichever applies into the
 `og:image` metadata and re-encodes it to a JPEG, since scrapers still don't
 decode the formats the site serves to browsers.
 
