@@ -19,9 +19,9 @@ content references, API generation and deck compilation.
 
 ## A worked example (yours to replace)
 
-`starter.test.ts` shows one course-specific check: assessment weights sum to
-100. Adapt or replace it as your course takes shape. A fact about one course is
-not a universal invariant.
+`starter.test.ts` shows one course-specific check: assessment weights sum
+to 100. Adapt or replace it as your course takes shape. A fact about one course
+is not a universal invariant.
 
 ## Your spec tests (yours to write)
 
