@@ -8,9 +8,9 @@ site to GitHub Pages.
 
 It ships as a working course website for **Slop University**, the course's
 running fictional institution: an Astro build on the same neutral theme package
-this course's own website uses, wearing the Slop identity. The
-structure is real and the content is placeholder. Deciding what the course is,
-and what shape its content takes, is your job.
+this course's own website uses, wearing the Slop identity. The structure is real
+and the content is placeholder. Deciding what the course is, and what shape its
+content takes, is your job.
 
 ## CI and Pages only turn on when you ship
 
@@ -73,16 +73,17 @@ are rewritten for you, and let the build's link checker catch the rest.
 - `src/components/` --- the card grids the listing pages render.
 - `src/decks/` --- slide decks, as markdown. One placeholder deck at
   `/decks/week-01/`, and `theme.css`, which puts them in the same brand as the
-  site. The normal build compiles decks; inspect their fit and legibility in
-  the browser at both marking viewports.
+  site. The build compiles decks but cannot see whether a slide fits or stays
+  legible.
 - `src/site-config.ts` --- site name, navigation, licence, and the Slop
   branding.
 - `src/assets/images/` --- starter home/social artwork. Replace it with
   course-specific work, or make a deliberate image-free treatment.
-- `spec/` --- a small course-data baseline, a replaceable worked example, and
-  space for the few course-specific checks you decide are worth maintaining.
+- `spec/` --- what the checks are for (`README.md`) and the shipped course-data
+  baseline (`data-integrity.test.ts`); the spec tests you write live alongside
+  them.
 - `CLAUDE.md` --- orients whoever works in this repo, you or a coding agent: the
-  content model, what the checks mean, and how to work here. Yours to grow.
+  content model, the base path, and what the checks mean. Yours to grow.
 - `PROCESS.md` --- a template for your process overview, showing the
   cited-moment format. Replace it with your own; `pnpm check:evidence` verifies
   your citations resolve. It also reports every authored starter fragment still
@@ -103,8 +104,8 @@ names keep the course API uniform enough for the Slop catalogue to ingest.
 Every build emits a versioned `dist/api/index.json` and per-entry JSON. This is
 platform plumbing rather than an API-design exercise. The future Slop catalogue
 will use the course record and content nodes to filter and display published
-courses, including their canonical `courses.slop.university/SLOPxxxx/` path.
-The integration emits and validates this contract during the build; do not
-hand-edit generated JSON.
+courses, including their canonical `courses.slop.university/SLOPxxxx/` path. The
+integration emits and validates this contract during the build; do not hand-edit
+generated JSON.
 
 See the course site for how the checks map to each week of the course.

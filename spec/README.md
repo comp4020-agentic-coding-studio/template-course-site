@@ -7,9 +7,9 @@ to deliverables, and the `start` course skill walks your agent through pulling
 the right one. The brief poses the problem; the spec is the fixed contract. Read
 both on the site before you plan or build.
 
-There are two supplied files here:
+One file is supplied here:
 
-## Course coherence (small, shipped baseline)
+## Course coherence (shipped, always on)
 
 `data-integrity.test.ts` checks only cross-page facts the content schemas and
 build cannot: dated material stays inside the course period, any learning-
@@ -17,26 +17,29 @@ outcome IDs used by assessments exist, and the policy page retains its required
 headings. The build already owns compilation, accessibility, internal links,
 content references, API generation and deck compilation.
 
-## A worked example (yours to replace)
-
-`starter.test.ts` shows one course-specific check: assessment weights sum
-to 100. Adapt or replace it as your course takes shape. A fact about one course
-is not a universal invariant.
-
 ## Your spec tests (yours to write)
 
 Turning the week's published spec into tests is your work, not the template's.
-Some spec lines are mechanically checkable — assert those here (any
-`spec/*.test.ts` runs with `pnpm check`). Some only a person can judge; leave
-those to the crit. There is no minimum test count. Select and justify the checks
-that protect your design's real promises, and test **contracts** — what the page
-must do, not how you happened to build it.
+Some spec lines are mechanically checkable — assert those here, in your own test
+file alongside the supplied ones (any `spec/*.test.ts` runs with `pnpm check`).
+Some lines only a person can judge; leave those to the crit. There is no minimum
+count: select the checks that protect your work's real promises, and test the
+**contracts** — what the page must do, not how you built it — so the tests
+survive a change of approach, or of stack.
 
-Sensors are the exception to "select for this brief". A sensor asserts a
-standard you hold the agent to whatever you're building, so it is harness rather
-than a check on this course site, and it travels with your `CLAUDE.md` from the
-repo before this one to the repo after it. Bring the ones that still apply.
+Two kinds end up in here, and they have different lifespans:
 
-A green suite here is backpressure, not a mark: your tutor verifies the live
-site against the published spec at the crit, and keeping your own tests green is
-how you arrive with no surprises.
+- **contract tests** answer this week's published spec. They retire with the
+  brief they answer, so they stay behind when the week does.
+- **sensors** assert a standard you hold the agent to whatever the brief is. A
+  sensor is harness, the same as a rule in `CLAUDE.md`, so it comes with you
+  into next week's repo. Catching a recurring failure once and wiring it into
+  `check` is the skilled move; re-prompting until it passes is the routine one.
+
+By the end of semester the sensors you've accumulated are the clearest record
+you have of what you've taught yourself to check for — worth citing in
+`PROCESS.md` the week each one lands.
+
+A green suite here is backpressure, not a mark: your tutor verifies what you
+deployed against the published spec at the crit, and keeping your own tests
+green is how you arrive with no surprises.
