@@ -56,6 +56,16 @@ removes an entry from the production build entirely (no page, no listing, no
 graph edge) while leaving it visible in `pnpm dev`, so you can stage content.
 `draft: true` keeps the page visible and marks it as not yet final.
 
+The schemas validate the keys they declare and pass through the ones they don't.
+A key you invent in a node's frontmatter survives validation and lands in that
+node's `meta` object in the generated API --- put `prereq: week-03` on a session
+and it comes back at `/api/sessions/<slug>.json` under `meta.prereq`, where a
+test in `spec/` can assert on it. That is how a fact peculiar to your course ---
+a progression rule, a required kit, a cohort restriction --- becomes data the
+site and its checks can both read, rather than prose only a person can. The
+reserved names are `title`, `description`, `tags`, `related`, `links`, `spec`
+and `published`; everything else is yours.
+
 ## Naming teaching sessions
 
 Keep the collection key, refs and URL as `sessions`. Choose what students see

@@ -69,7 +69,12 @@ jobs:
             --no-verification
 
   deploy:
-    needs: check
+    # Deliberately not `needs: check`. The checks in `spec/` are the student's
+    # own work and are marked as such, so a red one is a finding about the
+    # course they are building --- not a reason to take their live site down
+    # mid-assignment. The deploy runs its own `pnpm build`, which is the gate
+    # that matters here: a site that cannot build still cannot ship.
+    #
     # Pages can't serve a private repo on the free org anyway; the visibility
     # condition keeps a private-phase run from failing confusingly here.
     if: ${{ !github.event.repository.private && github.ref == 'refs/heads/main' }}
