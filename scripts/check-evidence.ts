@@ -10,7 +10,9 @@
 // derive from the name alone, offline. The final-project repo spans several
 // deliverables; any one of its names counts here.
 import { execFileSync } from "node:child_process";
+// --- course-site only (approved divergence: the Assignment 2 gate) ---
 import { createHash } from "node:crypto";
+// --- end course-site only ---
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 
@@ -47,6 +49,7 @@ export function expectedReflections(repo: string): string[] | null {
   return null;
 }
 
+// --- course-site only (approved divergence: the Assignment 2 gate) ---
 function sha256(path: string): string {
   return createHash("sha256").update(readFileSync(path)).digest("hex");
 }
@@ -63,6 +66,7 @@ function remainingStarterText(): string {
     throw error;
   }
 }
+// --- end course-site only ---
 
 function main(): void {
   let failed = false;
@@ -104,6 +108,7 @@ function main(): void {
     }
   }
 
+  // --- course-site only (approved divergence: the Assignment 2 gate) ---
   if (repo?.startsWith("comp4020-ass2-")) {
     const trackedSource = remainingStarterText();
     if (trackedSource) {
@@ -124,6 +129,7 @@ function main(): void {
       }
     }
   }
+  // --- end course-site only ---
 
   if (!existsSync("PROCESS.md")) {
     fail("no PROCESS.md in the repo root");
