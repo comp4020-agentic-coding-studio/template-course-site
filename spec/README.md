@@ -33,10 +33,9 @@ that protect your design's real promises, and test **contracts** — what the pa
 must do, not how you happened to build it.
 
 Sensors are the exception to "select for this brief". A sensor asserts a
-standard you hold the agent to whatever you're building — nothing left logging
-to the console in shipped output, say — so it is harness rather than a check on
-this course site, and it travels with your `CLAUDE.md` from the repo before this
-one to the repo after it. Bring the ones that still apply.
+standard you hold the agent to whatever you're building, so it is harness rather
+than a check on this course site, and it travels with your `CLAUDE.md` from the
+repo before this one to the repo after it. Bring the ones that still apply.
 
 A green suite here is backpressure, not a mark: your tutor verifies the live
 site against the published spec at the crit, and keeping your own tests green is
