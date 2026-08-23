@@ -147,3 +147,7 @@ A starting point, not a rulebook. As you learn what your site needs --- a
 convention the work has to hold to, a sensor that keeps catching you out, a fact
 about the stack that is easy to get wrong --- write it down here. Growing this
 file is the work.
+
+This file and any sensors you wire into `check` are your harness: both carry
+into the next repo, and the site itself doesn't. `spec/README.md` draws the
+line.
