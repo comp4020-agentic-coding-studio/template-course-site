@@ -64,12 +64,12 @@ are rewritten for you, and let the build's link checker catch the rest.
   replace it incrementally and keep the checks green.
 - `src/content.config.ts` --- the schemas those collections validate against.
 - `src/course-config.ts` --- the validated course record: SLOP code, title,
-  description, tags, level, session and dates, with optional learning outcomes.
-  The home page, course page, navigation and JSON API all read it. Change its
-  dates alongside the placeholder sessions, lectures and assessments that use
-  them so the course remains internally consistent.
-- `src/pages/` --- generated home and course-record pages, listings and detail
-  routes, one ordinary Markdown policies page, and a 404.
+  description, tags, level, session and dates. The home page, navigation and
+  JSON API all read it. Change its dates alongside the placeholder sessions,
+  lectures and assessments that use them so the course remains internally
+  consistent.
+- `src/pages/` --- the generated home page, listings and detail routes, an
+  ordinary Markdown policies page, and a 404.
 - `src/components/` --- the card grids the listing pages render.
 - `src/decks/` --- slide decks, as markdown. One placeholder deck at
   `/decks/week-01/`, and `theme.css`, which puts them in the same brand as the

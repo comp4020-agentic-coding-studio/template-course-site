@@ -11,11 +11,10 @@ One file is supplied here:
 
 ## Course coherence (shipped, always on)
 
-`data-integrity.test.ts` checks only cross-page facts the content schemas and
-build cannot: dated material stays inside the course period, any learning-
-outcome IDs used by assessments exist, and the policy page retains its required
-headings. The build already owns compilation, accessibility, internal links,
-content references, API generation and deck compilation.
+`data-integrity.test.ts` checks the one cross-page fact the content schemas and
+build cannot: dated material stays inside the course period. The build already
+owns compilation, accessibility, internal links, content references, API
+generation and deck compilation.
 
 ## Your spec tests (yours to write)
 

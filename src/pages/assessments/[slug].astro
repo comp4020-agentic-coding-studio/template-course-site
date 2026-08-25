@@ -5,8 +5,6 @@ import RelatedContent from "astro-course-university/components/RelatedContent.as
 import SpecList from "astro-course-university/components/SpecList.astro";
 import Callout from "astro-theme-university/components/Callout.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import { withBase } from "astro-theme-university/url";
-import LearningOutcomeRefs from "../../components/LearningOutcomeRefs.astro";
 import MarkingModel from "../../components/MarkingModel.astro";
 import { formatCourseDate } from "../../lib/dates";
 import { graphCollections, siteConfig } from "../../site-config";
@@ -44,8 +42,6 @@ const { Content } = await render(assessment);
     fixed part: what a marker checks. Some lines can be checked mechanically;
     the rest call for judgement.
   </SpecList>
-  <LearningOutcomeRefs outcomes={assessment.data.outcomes} />
-  <MarkingModel marking={assessment.data.marking} />
-  <p>Course-wide rules live on the <a href={withBase("/policies/")}>Policies and support</a> page.</p>
+  {assessment.data.marking && <MarkingModel marking={assessment.data.marking} />}
   <RelatedContent entry={assessment} collections={graphCollections} />
 </ContentLayout>

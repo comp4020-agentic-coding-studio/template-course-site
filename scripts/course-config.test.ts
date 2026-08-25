@@ -4,7 +4,7 @@ import { slopCourseMetaSchema } from "../src/course-config";
 const valid = {
   code: "SLOP2713",
   title: "Small Machines for Large Puddles",
-  session: "Semester 2" as const,
+  session: "Semester 2",
   year: 2027,
   level: 2 as const,
   startDate: "2027-07-26",
@@ -12,7 +12,6 @@ const valid = {
   description:
     "A focused course for students who want to build, observe and explain tiny machines working in inconveniently large puddles.",
   tags: ["puddles", "machines"],
-  learningOutcomes: [],
 };
 
 describe("Slop course record", () => {
@@ -24,6 +23,16 @@ describe("Slop course record", () => {
     "rejects invalid code %s",
     (code) => expect(slopCourseMetaSchema.safeParse({ ...valid, code }).success).toBe(false),
   );
+
+  it("takes any session name and a period that crosses the year", () => {
+    const record = {
+      ...valid,
+      session: "The Long Dark",
+      startDate: "2027-11-01",
+      endDate: "2028-02-12",
+    };
+    expect(slopCourseMetaSchema.safeParse(record).success).toBe(true);
+  });
 
   it("requires the level to match the code", () => {
     expect(slopCourseMetaSchema.safeParse({ ...valid, level: 3 }).success).toBe(false);

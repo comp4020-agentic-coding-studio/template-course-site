@@ -19,9 +19,9 @@ they're called --- is the work.
 Content is Markdown with frontmatter under `src/content/`, in four collections
 declared in `src/content.config.ts`: `sessions`, `assessments`, `lectures` and
 `people`. Sessions and lectures carry dates and structured teacher references;
-assessments carry dates, outcomes and marking models; people are the cast list.
-The ordinary Markdown page at `src/pages/policies/index.mdx` is also copied into
-the course API as a policy node.
+assessments carry due dates, weights and an optional marking model; people are
+the cast list. The ordinary Markdown page at `src/pages/policies/index.mdx` is
+also copied into the course API as a policy node.
 
 The collection key is the whole address. `sessions/getting-started` is the file
 `src/content/sessions/getting-started.md`, the page
@@ -37,10 +37,10 @@ is caught before it ships, not after.
 
 `src/course-config.ts` is the single source for the course record. Its strict
 schema validates the `SLOPxxxx` code and level, title, 80--300 character
-description, one to three tags, session label, year, teaching period and
-optional learning outcomes. It feeds the home page, `/course/`, navigation and
-`/api/index.json`, so do not restate those facts. Change the record's dates
-alongside the placeholder sessions, lectures and assessments that use them.
+description, one to three tags, session label, year and teaching period. It
+feeds the home page, navigation and `/api/index.json`, so do not restate those
+facts. Change the record's dates alongside the placeholder sessions, lectures
+and assessments that use them.
 
 Two orthogonal flags live in every graph collection's schema. `published: false`
 removes an entry from the production build entirely (no page, no listing, no
@@ -120,8 +120,8 @@ the deploy.
 `pnpm build` is itself several checks: it runs axe over every rendered page,
 verifies internal links respect the base path, fails on a dangling content ref,
 compiles the decks, and emits the versioned API the catalogue ingests.
-`spec/data-integrity.test.ts` only checks the cross-page course facts the build
-cannot: dates, optional outcome IDs and policy headings.
+`spec/data-integrity.test.ts` only checks the one cross-page course fact the
+build cannot: dated material stays inside the teaching period.
 
 `spec/README.md`, `PROCESS.md` and `reflections/README.md` are in this repo and
 say what they are for.

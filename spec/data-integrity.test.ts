@@ -13,7 +13,6 @@ interface CourseApi {
   course: {
     startDate: string;
     endDate: string;
-    learningOutcomes: string[];
   };
   nodes: ApiNode[];
 }
@@ -39,29 +38,5 @@ describe("course data integrity", () => {
     }
   });
 
-  it("accepts only learning-outcome IDs that exist", () => {
-    const ids = new Set(api.course.learningOutcomes.map((_, index) => `LO${index + 1}`));
-    for (const assessment of api.nodes.filter((node) => node.type === "assessments")) {
-      const outcomes = (assessment.meta?.outcomes ?? []) as string[];
-      for (const outcome of outcomes) {
-        expect(ids.has(outcome), `${assessment.id} names missing outcome ${outcome}`).toBe(true);
-      }
-    }
-  });
 
-  it("publishes the one policy page through the API", () => {
-    const policies = api.nodes.filter((node) => node.type === "policies");
-    expect(policies).toHaveLength(1);
-    const body = JSON.parse(
-      readFileSync(resolve("dist/api/policies/index.json"), "utf8"),
-    ).body as string;
-    for (const heading of [
-      "## Late work",
-      "## Extensions",
-      "## Academic integrity",
-      "## Getting help",
-    ]) {
-      expect(body).toContain(heading);
-    }
-  });
 });

@@ -41,6 +41,6 @@ read the second and know what to hand in.
 Name the artefact and the format. If evidence of process is part of the
 submission, say which files and what each is for.
 
-The structured `marking:` block renders the criterion table below. Use weighted
-criteria, or switch to a clearly explained holistic marking method. Course-wide
-rules belong on the policy page rather than being restated here.
+The optional `marking:` block renders a criterion table (weighted) or a marking
+statement (holistic) below; leave it out and say how the work is marked in
+prose.

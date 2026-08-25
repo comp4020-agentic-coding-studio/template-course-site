@@ -50,8 +50,7 @@ export const collections = {
         week: weekSchema,
         due: z.coerce.date(),
         weight: z.coerce.number().positive().max(100),
-        outcomes: z.array(z.string().regex(/^LO[1-9]\d*$/)).default([]),
-        marking: z.discriminatedUnion("mode", [weightedMarking, holisticMarking]),
+        marking: z.discriminatedUnion("mode", [weightedMarking, holisticMarking]).optional(),
       })
       .loose(),
   }),
@@ -75,8 +74,8 @@ export const collections = {
         .object({
           title: z.string().trim().min(1),
           description: z.string().trim().min(40),
-          role: z.enum(["convenor", "tutor", "guest", "other"]),
-          contact: z.string().trim().min(1),
+          role: z.string().trim().min(1),
+          contact: z.string().trim().min(1).optional(),
           affiliation: z.string().trim().min(1).optional(),
           email: z.email().optional(),
           url: z.url().optional(),

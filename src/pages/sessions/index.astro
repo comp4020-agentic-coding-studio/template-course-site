@@ -1,6 +1,5 @@
 ---
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
-import heroImage from "../../assets/images/hero-sessions.avif";
 import SessionsGrid from "../../components/SessionsGrid.astro";
 import { sessionLabels, siteConfig } from "../../site-config";
 ---
@@ -8,8 +7,6 @@ import { sessionLabels, siteConfig } from "../../site-config";
 <ContentLayout
   title={sessionLabels.plural}
   description={`The twelve-week teaching schedule: what happens in each ${sessionLabels.singular.toLowerCase()}, what to prepare, and what leaves the room.`}
-  heroImage={heroImage}
-  heroImageAlt="A long workbench seen at an angle, crowded with tools, spools and half-built apparatus, its underside in deep shadow, in a two-ink gold and black risograph print"
   {...siteConfig}
 >
   <p>
