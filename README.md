@@ -9,8 +9,7 @@ site to GitHub Pages.
 It ships as a working course website for **Slop University**, the course's
 running fictional institution: an Astro build on the same neutral theme package
 this course's own website uses, wearing the Slop identity. The structure is real
-and the content is placeholder. Deciding what the course is, and what shape its
-content takes, is your job.
+and the content is placeholder.
 
 ## CI and Pages only turn on when you ship
 
@@ -64,7 +63,7 @@ is fine if you match the Node and pnpm versions in `mise.toml`.
   like an API key, so your COMP4020 key can't end up in a public repo. Installed
   automatically by `pnpm install`.
 - `CLAUDE.md`, `PROCESS.md`, `spec/README.md` and `reflections/README.md` ---
-  each says what it is for, and each is yours to replace or grow.
+  each says what it is for.
 
 `CLAUDE.md` carries the rest of what is fixed: the content model and the address
 a ref shares with its file, page and JSON; the naming of teaching sessions; the

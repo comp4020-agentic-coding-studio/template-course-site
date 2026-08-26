@@ -10,9 +10,7 @@ The
 publishes this deliverable's brief and spec, and this repo's name tells you
 which deliverable applies. Read both before you plan or build.
 
-The structure here is real and the content is placeholder. Designing the course
---- what it teaches, how it's assessed, what its teaching sessions are and what
-they're called --- is the work.
+The structure here is real and the content is placeholder.
 
 ## The content model
 
@@ -47,28 +45,25 @@ removes an entry from the production build entirely (no page, no listing, no
 graph edge) while leaving it visible in `pnpm dev`, so you can stage content.
 `draft: true` keeps the page visible and marks it as not yet final.
 
-The schemas validate the keys they declare and pass through the ones they don't.
-A key you invent in a node's frontmatter survives validation and lands in that
-node's `meta` object in the generated API, so a fact peculiar to your course can
-be data the site reads rather than prose only a person can. The reserved names
-are `title`, `description`, `tags`, `related`, `links`, `spec` and `published`;
-everything else is yours.
+The schemas validate the keys they declare and pass through the ones they don't:
+a key you invent in a node's frontmatter survives validation and lands in that
+node's `meta` object in the generated API. The reserved names are `title`,
+`description`, `tags`, `related`, `links`, `spec` and `published`.
 
 ## Naming teaching sessions
 
-Keep the collection key, refs and URL as `sessions`. Choose what students see
---- Labs, Studios, Workshops, Crits, or something else --- with `sessionLabels`
-in `src/site-config.ts`. The stable internal name is part of the catalogue
-contract; the visible language is a course-design choice.
+Keep the collection key, refs and URL as `sessions`: the stable internal name is
+part of the catalogue contract. Choose what students see --- Labs, Studios,
+Workshops, Crits, or something else --- with `sessionLabels` in
+`src/site-config.ts`.
 
 ## Slides
 
-A lecture can carry real slides. Decks live in `src/decks/` as `.deck.mdx` files
-and build to `/decks/<name>/`, rendered by
-[astromotion](https://github.com/ANUcybernetics/astromotion) --- markdown, with
-`---` between slides. Its README has the rest of the syntax: slide classes,
-backgrounds, speaker notes, QR codes, fragments, and components hydrated per
-slide.
+Decks live in `src/decks/` as `.deck.mdx` files and build to `/decks/<name>/`,
+rendered by [astromotion](https://github.com/ANUcybernetics/astromotion) ---
+markdown, with `---` between slides. Its README has the rest of the syntax:
+slide classes, backgrounds, speaker notes, QR codes, fragments, and components
+hydrated per slide.
 
 `src/decks/theme.css` is one import, and it should stay that way. The theme's
 deck stylesheet derives its colours from the same brand tokens the site uses, so
@@ -87,10 +82,9 @@ the build rewrites for the base path.
 
 The site deploys to `https://<owner>.github.io/<repo>/`, so every internal URL
 carries a `/<repo>/` prefix. `astro.config.ts` derives it at config time from
-`GITHUB_REPOSITORY` (in CI) or the `origin` remote (locally), and
-`scripts/pages-base.ts` holds that logic with tests in
-`scripts/pages-base.test.ts`. Those are template-maintainer tests, not part of
-the student-facing course spec.
+`GITHUB_REPOSITORY` (in CI) or the `origin` remote (locally), in
+`scripts/pages-base.ts`. Its tests in `scripts/pages-base.test.ts` are
+template-maintainer tests, not part of your course spec.
 
 Nothing to configure --- but a hand-written root-absolute link
 (`href="/sessions/"`) in an `.astro` file skips Astro's base handling, works on
@@ -101,12 +95,11 @@ components are rewritten for you; the build's link checker catches the rest.
 
 The image people see when a link to the site is shared comes from `socialImage:`
 in `src/site-config.ts`, pointing at a `/src/assets/...` path; `socialImageAlt:`
-describes it. Both are placeholders --- replace them and keep the picture
-1200x630, or remove the imagery as part of a coherent image-free treatment. A
-page with artwork of its own overrides the site-wide card with its own
-`socialImage:` frontmatter key. The theme turns whichever applies into the
-`og:image` metadata and re-encodes it to a JPEG, since scrapers still don't
-decode the formats the site serves to browsers.
+describes it. Both are placeholders, and the picture is 1200x630. A page with
+artwork of its own overrides the site-wide card with its own `socialImage:`
+frontmatter key. The theme turns whichever applies into the `og:image` metadata
+and re-encodes it to a JPEG, since scrapers still don't decode the formats the
+site serves to browsers.
 
 ## The checks
 
@@ -126,10 +119,8 @@ build cannot: dated material stays inside the teaching period.
 `spec/README.md`, `PROCESS.md` and `reflections/README.md` are in this repo and
 say what they are for.
 
-## This file is yours
+## What carries forward
 
-A starting point, not a rulebook: what you add to it is the harness, and the
-harness is assessed. This file and the sensors you wire into `check` carry
-across the course --- both come with you into next week's repo. The prototype
-doesn't: source, and the tests answering this week's published spec, stay
-behind. `spec/README.md` draws the line.
+This file and the sensors you wire into `check` come with you into next week's
+repo. The prototype doesn't: source, and the tests answering this week's
+published spec, stay behind. `spec/README.md` draws the line.
