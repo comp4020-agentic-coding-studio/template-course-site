@@ -72,10 +72,10 @@ base path; the link-preview card; and the deck syntax.
 ## The generated course API
 
 Every build emits a versioned `dist/api/index.json` and per-entry JSON. This is
-platform plumbing rather than an API-design exercise. The future Slop catalogue
-will use the course record and content nodes to filter and display published
-courses, including their canonical `courses.slop.university/SLOPxxxx/` path. The
-integration emits and validates this contract during the build; do not hand-edit
-generated JSON.
+platform plumbing rather than an API-design exercise. The future SlopU programs
+and courses page will use the course record and content nodes to filter and
+display published courses, including their canonical
+`courses.slop.university/SLOPxxxx/` path. The integration emits and validates
+this contract during the build; do not hand-edit generated JSON.
 
 See the course site for how the checks map to each week of the course.

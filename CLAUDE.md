@@ -52,10 +52,9 @@ node's `meta` object in the generated API. The reserved names are `title`,
 
 ## Naming teaching sessions
 
-Keep the collection key, refs and URL as `sessions`: the stable internal name is
-part of the catalogue contract. Choose what students see --- Labs, Studios,
-Workshops, Crits, or something else --- with `sessionLabels` in
-`src/site-config.ts`.
+Keep the collection key, refs and URL as `sessions`: the programs and courses
+page reads those names. Choose what students see --- Labs, Studios, Workshops,
+Crits, or something else --- with `sessionLabels` in `src/site-config.ts`.
 
 ## Slides
 
@@ -112,9 +111,9 @@ the deploy.
 
 `pnpm build` is itself several checks: it runs axe over every rendered page,
 verifies internal links respect the base path, fails on a dangling content ref,
-compiles the decks, and emits the versioned API the catalogue ingests.
-`spec/data-integrity.test.ts` only checks the one cross-page course fact the
-build cannot: dated material stays inside the teaching period.
+compiles the decks, and emits the versioned API the programs and courses page
+ingests. `spec/data-integrity.test.ts` only checks the one cross-page course
+fact the build cannot: dated material stays inside the teaching period.
 
 `spec/README.md`, `PROCESS.md` and `reflections/README.md` are in this repo and
 say what they are for.
