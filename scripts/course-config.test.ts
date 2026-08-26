@@ -19,7 +19,7 @@ describe("Slop course record", () => {
     expect(slopCourseMetaSchema.safeParse(valid).success).toBe(true);
   });
 
-  it.each(["SLOP0713", "SLOP5713", "SLOP9713", "SLOP271", "COMP2713"])(
+  it.each(["SLOP0713", "SLOP5713", "SLOP7713", "SLOP9713", "SLOP271", "COMP2713"])(
     "rejects invalid code %s",
     (code) => expect(slopCourseMetaSchema.safeParse({ ...valid, code }).success).toBe(false),
   );

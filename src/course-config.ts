@@ -1,25 +1,20 @@
 import type { CourseMetaInput } from "astro-course-university";
 import { z } from "astro/zod";
 
-const allowedCode = /^SLOP([1-4]|[6-8])\d{3}$/;
+// The level digits ANU uses: 1000--4000 undergraduate, 6000 and 8000
+// postgraduate. Both the code pattern and the level field derive from this.
+const LEVELS = [1, 2, 3, 4, 6, 8] as const;
+const allowedCode = new RegExp(`^SLOP[${LEVELS.join("")}]\\d{3}$`);
 
 export const slopCourseMetaSchema = z
   .strictObject({
     code: z.string().regex(allowedCode, {
-      message: "use SLOP plus a 1000–4000 or 6000–8000 level code",
+      message: "use SLOP plus a 1000–4000, 6000 or 8000 level code",
     }),
     title: z.string().trim().min(1).max(100),
     session: z.string().trim().min(1).max(40),
     year: z.number().int().min(2026).max(2200),
-    level: z.union([
-      z.literal(1),
-      z.literal(2),
-      z.literal(3),
-      z.literal(4),
-      z.literal(6),
-      z.literal(7),
-      z.literal(8),
-    ]),
+    level: z.literal(LEVELS),
     startDate: z.iso.date(),
     endDate: z.iso.date(),
     description: z.string().trim().min(80).max(300),
