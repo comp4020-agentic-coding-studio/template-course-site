@@ -11,6 +11,19 @@ running fictional institution: an Astro build on the same neutral theme package
 this course's own website uses, wearing the Slop identity. The structure is real
 and the content is placeholder.
 
+This file documents the platform, and the platform is fixed: the Slop identity,
+the content collections, the build and the generated API stay as they arrived,
+and there is no stack choice to make in this repo. Everything else is yours ---
+the course itself, the pages, the components, the navigation, the visual
+treatment and every word of content. So is `CLAUDE.md`, which arrives empty.
+
+## Your brief and spec
+
+The
+[course website](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/)
+publishes this deliverable's brief and spec, and this repo's name tells you
+which deliverable applies. Read both before you plan or build.
+
 ## CI and Pages only turn on when you ship
 
 Your repo starts private, and both CI jobs (`check` and `deploy`) are gated on
@@ -62,12 +75,120 @@ is fine if you match the Node and pnpm versions in `mise.toml`.
 - `.githooks/pre-commit` --- blocks any commit that contains something shaped
   like an API key, so your COMP4020 key can't end up in a public repo. Installed
   automatically by `pnpm install`.
-- `CLAUDE.md`, `PROCESS.md`, `spec/README.md` and `reflections/README.md` ---
-  each says what it is for.
+- `PROCESS.md`, `spec/README.md` and `reflections/README.md` --- each says what
+  it is for. `CLAUDE.md` is your harness, and it stays empty until you write it.
 
-`CLAUDE.md` carries the rest of what is fixed: the content model and the address
-a ref shares with its file, page and JSON; the naming of teaching sessions; the
-base path; the link-preview card; and the deck syntax.
+The rest of this file is the platform: the content model, the naming of teaching
+sessions, the slide decks, the base path, the link-preview card, the checks and
+the generated course API.
+
+## The content model
+
+Content is Markdown with frontmatter under `src/content/`, in four collections
+declared in `src/content.config.ts`: `sessions`, `assessments`, `lectures` and
+`people`. Sessions and lectures carry dates and structured teacher references;
+assessments carry due dates, weights and an optional marking model; people are
+the cast list. The ordinary Markdown page at `src/pages/policies/index.mdx` is
+also copied into the course API as a policy node.
+
+The collection key is the whole address. `sessions/getting-started` is the file
+`src/content/sessions/getting-started.md`, the page
+`/sessions/getting-started/`, the JSON at `/api/sessions/getting-started.json`,
+and the ref other pages use to link to it. Those four agree by construction, so
+renaming one means renaming all of them.
+
+`related:` frontmatter connects nodes. Entries are refs ---
+`<collection>/<slug>`, or a bare slug for the same collection --- and the link
+renders on both pages, so declare it on whichever side is convenient. **The
+build fails on a ref that doesn't resolve**, which is the point: a dangling link
+is caught before it ships, not after.
+
+`src/course-config.ts` is the single source for the course record. Its strict
+schema validates the `SLOPxxxx` code and level, title, 80--300 character
+description, one to three tags, session label, year and teaching period. It
+feeds the home page, navigation and `/api/index.json`, so do not restate those
+facts. Change the record's dates alongside the placeholder sessions, lectures
+and assessments that use them.
+
+The code arrives part-filled. Its last three digits were allocated to this repo
+and no other course in the cohort has them, so keep them; the first digit is the
+level, and it's yours to choose on the usual ANU scheme --- 1 to 4 for
+undergraduate, 6 or 8 for postgraduate. The level doesn't affect your mark.
+
+Two orthogonal flags live in every graph collection's schema. `published: false`
+removes an entry from the production build entirely (no page, no listing, no
+graph edge) while leaving it visible in `pnpm dev`, so you can stage content.
+`draft: true` keeps the page visible and marks it as not yet final.
+
+The schemas validate the keys they declare and pass through the ones they don't:
+a key you invent in a node's frontmatter survives validation and lands in that
+node's `meta` object in the generated API. The reserved names are `title`,
+`description`, `tags`, `related`, `links`, `spec` and `published`.
+
+## Naming teaching sessions
+
+Keep the collection key, refs and URL as `sessions`: the programs and courses
+page reads those names. Choose what students see --- Labs, Studios, Workshops,
+Crits, or something else --- with `sessionLabels` in `src/site-config.ts`.
+
+## Slides
+
+Decks live in `src/decks/` as `.deck.mdx` files and build to `/decks/<name>/`,
+rendered by [astromotion](https://github.com/ANUcybernetics/astromotion) ---
+markdown, with `---` between slides. Its README has the rest of the syntax:
+slide classes, backgrounds, speaker notes, QR codes, fragments, and components
+hydrated per slide.
+
+`src/decks/theme.css` is one import, and it should stay that way. The theme's
+deck stylesheet derives its colours from the same brand tokens the site uses, so
+a deck already matches the rest of the site; a colour restated there is how the
+two start to disagree.
+
+The normal build compiles every deck and catches invalid MDX or astromotion
+syntax. Nothing checks whether a slide fits or stays legible; that only shows up
+in a browser, at the two marking viewports.
+
+A deck is not a content-collection entry, so it has no `related:` edges. Link it
+from its lecture page with a markdown link (`[Slides](/decks/week-01/)`), which
+the build rewrites for the base path.
+
+## The base path
+
+The site deploys to `https://<owner>.github.io/<repo>/`, so every internal URL
+carries a `/<repo>/` prefix. `astro.config.ts` derives it at config time from
+`GITHUB_REPOSITORY` (in CI) or the `origin` remote (locally), in
+`scripts/pages-base.ts`. Its tests in `scripts/pages-base.test.ts` are
+template-maintainer tests, not part of your course spec.
+
+Nothing to configure --- but a hand-written root-absolute link
+(`href="/sessions/"`) in an `.astro` file skips Astro's base handling, works on
+`localhost`, and 404s on the live site. Markdown links and the theme's
+components are rewritten for you; the build's link checker catches the rest.
+
+## The link-preview card
+
+The image people see when a link to the site is shared comes from `socialImage:`
+in `src/site-config.ts`, pointing at a `/src/assets/...` path; `socialImageAlt:`
+describes it. Both are placeholders, and the picture is 1200x630. A page with
+artwork of its own overrides the site-wide card with its own `socialImage:`
+frontmatter key. The theme turns whichever applies into the `og:image` metadata
+and re-encodes it to a JPEG, since scrapers still don't decode the formats the
+site serves to browsers.
+
+## The checks
+
+`pnpm check` runs type checking, the production build and a deliberately small
+course-content test suite, and `pnpm check:evidence` is the extra gate before
+you ship: process citations, the required reflection and, for Assignment 2,
+every tracked `STARTER_CONTENT` fragment and unchanged key imagery. Remove a
+fragment's marker when you replace that fragment. CI adds the secret scan and
+the deploy.
+
+`pnpm build` is itself several checks: it runs axe over every rendered page,
+verifies internal links respect the base path, fails on a dangling content ref,
+compiles the decks, and emits the versioned API the programs and courses page
+ingests. `spec/data-integrity.test.ts` only checks the one cross-page course
+fact the build cannot: dated material stays inside the teaching period.
 
 ## The generated course API
 
@@ -77,5 +198,11 @@ and courses page will use the course record and content nodes to filter and
 display published courses, including their canonical
 `courses.slop.university/SLOPxxxx/` path. The integration emits and validates
 this contract during the build; do not hand-edit generated JSON.
+
+## What carries forward
+
+Your `CLAUDE.md` and the sensors you wire into `check` come with you into next
+week's repo. The prototype doesn't: source, and the tests answering this week's
+published spec, stay behind. `spec/README.md` draws the line.
 
 See the course site for how the checks map to each week of the course.
