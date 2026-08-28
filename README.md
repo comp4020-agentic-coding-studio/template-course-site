@@ -178,11 +178,12 @@ site serves to browsers.
 ## The checks
 
 `pnpm check` runs type checking, the production build and a deliberately small
-course-content test suite, and `pnpm check:evidence` is the extra gate before
-you ship: process citations, the required reflection and, for Assignment 2,
-every tracked `STARTER_CONTENT` fragment and unchanged key imagery. Remove a
-fragment's marker when you replace that fragment. CI adds the secret scan and
-the deploy.
+course-content test suite. The tests in `spec/` assert what the site actually
+built, so `pnpm test` builds first and works on its own; there is only ever the
+one ordering. `pnpm check:evidence` is the extra gate before you ship: process
+citations, the required reflection and, for Assignment 2, every tracked
+`STARTER_CONTENT` fragment and unchanged key imagery. Remove a fragment's marker
+when you replace that fragment. CI adds the secret scan and the deploy.
 
 `pnpm build` is itself several checks: it runs axe over every rendered page,
 verifies internal links respect the base path, fails on a dangling content ref,
