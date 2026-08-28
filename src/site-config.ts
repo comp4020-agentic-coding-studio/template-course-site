@@ -9,12 +9,7 @@ export const sessionLabels = {
   plural: "Sessions",
 } as const;
 
-export const graphCollections = [
-  "sessions",
-  "assessments",
-  "lectures",
-  "people",
-];
+export const graphCollections = ["sessions", "assessments", "lectures", "people"];
 
 export const courseApiCollections = [
   ...graphCollections.map((key) => ({ key })),

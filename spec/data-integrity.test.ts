@@ -17,9 +17,7 @@ interface CourseApi {
   nodes: ApiNode[];
 }
 
-const api = JSON.parse(
-  readFileSync(resolve("dist/api/index.json"), "utf8"),
-) as CourseApi;
+const api = JSON.parse(readFileSync(resolve("dist/api/index.json"), "utf8")) as CourseApi;
 const dateOnly = (value: unknown): string => String(value).slice(0, 10);
 
 describe("course data integrity", () => {
@@ -31,12 +29,8 @@ describe("course data integrity", () => {
       const raw = node.type === "assessments" ? node.meta?.due : node.meta?.date;
       const date = dateOnly(raw);
       expect(date, `${node.id} has no date`).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-      expect(date >= api.course.startDate, `${node.id} falls before teaching starts`).toBe(
-        true,
-      );
+      expect(date >= api.course.startDate, `${node.id} falls before teaching starts`).toBe(true);
       expect(date <= api.course.endDate, `${node.id} falls after teaching ends`).toBe(true);
     }
   });
-
-
 });

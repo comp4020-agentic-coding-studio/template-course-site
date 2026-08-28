@@ -44,8 +44,7 @@ describe("Slop course record", () => {
     );
     expect(slopCourseMetaSchema.safeParse({ ...valid, tags: [] }).success).toBe(false);
     expect(
-      slopCourseMetaSchema.safeParse({ ...valid, tags: ["one", "two", "three", "four"] })
-        .success,
+      slopCourseMetaSchema.safeParse({ ...valid, tags: ["one", "two", "three", "four"] }).success,
     ).toBe(false);
   });
 });

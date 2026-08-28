@@ -56,11 +56,9 @@ function sha256(path: string): string {
 
 function remainingStarterText(): string {
   try {
-    return execFileSync(
-      "git",
-      ["grep", "-n", "-F", "STARTER_CONTENT", "--", "src"],
-      { encoding: "utf8" },
-    ).trim();
+    return execFileSync("git", ["grep", "-n", "-F", "STARTER_CONTENT", "--", "src"], {
+      encoding: "utf8",
+    }).trim();
   } catch (error) {
     if ((error as { status?: number }).status === 1) return "";
     throw error;
