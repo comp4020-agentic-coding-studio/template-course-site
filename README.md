@@ -11,11 +11,15 @@ running fictional institution: an Astro build on the same neutral theme package
 this course's own website uses, wearing the Slop identity. The structure is real
 and the content is placeholder.
 
-This file documents the platform, and the platform is fixed: the Slop identity,
-the content collections, the build and the generated API stay as they arrived,
-and there is no stack choice to make in this repo. Everything else is yours ---
-the course itself, the pages, the components, the navigation, the visual
-treatment and every word of content. So is `CLAUDE.md`, which arrives empty.
+This file documents the platform, and the platform is fixed: the Slop identity
+(the `astro-theme-slop` branding and palette wired into `src/site-config.ts` and
+`astro.config.ts`), the four content collections and their keys, the build
+pipeline in `astro.config.ts` and the generated API stay as they arrived, and
+there is no stack choice to make in this repo. Everything else is yours --- the
+course itself, the pages, the components, the navigation, the visual treatment
+and every word of content --- and adding is always allowed: a collection of your
+own, a page outside the collections, a component the theme doesn't have. So is
+`CLAUDE.md`, which arrives with no rules in it.
 
 ## Your brief and spec
 
@@ -46,13 +50,17 @@ for the details.
 ```sh
 mise install       # supported path: install the template's Node and pnpm
 pnpm install
-pnpm dev             # local dev server
+pnpm dev             # local dev server, at http://localhost:4321/<repo>/
 pnpm check           # types, build integrity and the small course spec
 pnpm check:evidence  # final submission gate
 ```
 
 `mise` is what tutor support reproduces runtime problems with; any other manager
 is fine if you match the Node and pnpm versions in `mise.toml`.
+
+The dev server serves the site under its base path (see below), so the address
+is `http://localhost:4321/<repo>/`; the bare `http://localhost:4321` Astro
+prints is a 404.
 
 ## What's here
 
@@ -65,6 +73,9 @@ is fine if you match the Node and pnpm versions in `mise.toml`.
   JSON API all read it.
 - `src/site-config.ts` --- site name, navigation, licence, and the Slop
   branding.
+- `src/layouts/PageLayout.astro` --- the layout every page renders through.
+  Site-wide styling goes here (a `<style is:global>` block, or a stylesheet it
+  imports), on top of the brand tokens.
 - `src/decks/` --- slide decks, as markdown, plus `theme.css`, which puts them
   in the same brand as the site.
 - `src/assets/images/` --- starter home/social artwork. Replace it with
@@ -76,7 +87,8 @@ is fine if you match the Node and pnpm versions in `mise.toml`.
   like an API key, so your COMP4020 key can't end up in a public repo. Installed
   automatically by `pnpm install`.
 - `PROCESS.md`, `spec/README.md` and `reflections/README.md` --- each says what
-  it is for. `CLAUDE.md` is your harness, and it stays empty until you write it.
+  it is for. `CLAUDE.md` is your harness, and it carries no rules until you
+  write them.
 
 The rest of this file is the platform: the content model, the naming of teaching
 sessions, the slide decks, the base path, the link-preview card, the checks and
@@ -86,10 +98,16 @@ the generated course API.
 
 Content is Markdown with frontmatter under `src/content/`, in four collections
 declared in `src/content.config.ts`: `sessions`, `assessments`, `lectures` and
-`people`. Sessions and lectures carry dates and structured teacher references;
-assessments carry due dates, weights and an optional marking model; people are
-the cast list. The ordinary Markdown page at `src/pages/policies/index.mdx` is
-also copied into the course API as a policy node.
+`people`. Sessions and lectures carry dates and, optionally, structured teacher
+references; assessments carry due dates, weights and an optional marking model;
+people are the cast list. The ordinary Markdown page at
+`src/pages/policies/index.mdx` is also copied into the course API as a policy
+node.
+
+Those four stay, because the programs and courses page reads them. A collection
+of your own is declared the same way in `src/content.config.ts`, listed in
+`graphCollections` in `src/site-config.ts` if it should carry `related:` edges
+and appear in the API, and given its pages under `src/pages/`.
 
 The collection key is the whole address. `sessions/getting-started` is the file
 `src/content/sessions/getting-started.md`, the page
@@ -139,10 +157,11 @@ markdown, with `---` between slides. Its README has the rest of the syntax:
 slide classes, backgrounds, speaker notes, QR codes, fragments, and components
 hydrated per slide.
 
-`src/decks/theme.css` is one import, and it should stay that way. The theme's
-deck stylesheet derives its colours from the same brand tokens the site uses, so
-a deck already matches the rest of the site; a colour restated there is how the
-two start to disagree.
+`src/decks/theme.css` starts as one import. The theme's deck stylesheet derives
+its colours from the same brand tokens the site uses, so a deck already matches
+the rest of the site; build on that if your decks need a look of their own, and
+restate as little as you can, since a colour restated there is how the two start
+to disagree.
 
 The normal build compiles every deck and catches invalid MDX or astromotion
 syntax. Nothing checks whether a slide fits or stays legible; that only shows up
