@@ -38,7 +38,7 @@ export const collections = {
       .extend({
         week: weekSchema,
         date: z.coerce.date(),
-        teachers: teacherRefs,
+        teachers: teacherRefs.optional(),
       })
       .loose(),
   }),
@@ -61,7 +61,7 @@ export const collections = {
       .extend({
         week: weekSchema,
         date: z.coerce.date(),
-        teachers: teacherRefs,
+        teachers: teacherRefs.optional(),
         slides: z.string().regex(/^\/decks\/[a-z0-9-]+\/$/).optional(),
       })
       .loose(),

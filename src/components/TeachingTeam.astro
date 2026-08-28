@@ -7,12 +7,17 @@ interface Props {
 }
 
 const { teachers } = Astro.props;
-const people = await getEntries(teachers);
+// A session or lecture with no `teachers:` renders no team at all.
+const people = teachers ? await getEntries(teachers) : [];
 ---
 
-<section aria-labelledby="teaching-team">
-  <h2 id="teaching-team">Teaching team</h2>
-  <ul>
-    {people.map((person) => <li><a href={withBase(`/people/${person.id}/`)}>{person.data.title}</a> — {person.data.role}</li>)}
-  </ul>
-</section>
+{
+  people.length > 0 && (
+    <section aria-labelledby="teaching-team">
+      <h2 id="teaching-team">Teaching team</h2>
+      <ul>
+        {people.map((person) => <li><a href={withBase(`/people/${person.id}/`)}>{person.data.title}</a> — {person.data.role}</li>)}
+      </ul>
+    </section>
+  )
+}
