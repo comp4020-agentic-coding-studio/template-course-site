@@ -219,10 +219,4 @@ display published courses, including their canonical
 `courses.slop.university/SLOPxxxx/` path. The integration emits and validates
 this contract during the build; do not hand-edit generated JSON.
 
-## What carries forward
-
-Your `CLAUDE.md` and the sensors you wire into `check` come with you into next
-week's repo. The prototype doesn't: source, and the tests answering this week's
-published spec, stay behind. `spec/README.md` draws the line.
-
 See the course site for how the checks map to each week of the course.
