@@ -17,10 +17,10 @@
     "@astrojs/mdx": "^7.0.0",
     "@iconify-json/iconoir": "^1.2.11",
     "astro": "^7.2.0",
-    "astro-course-university": "github:ANUcybernetics/astro-course-university#v0.1.0",
+    "astro-course-university": "github:ANUcybernetics/astro-course-university#v0.1.1",
     "astro-theme-slop": "github:benswift/astro-theme-slop#v0.1.0",
-    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.13.2",
-    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.24.0",
+    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.14.1",
+    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.24.1",
     "sharp": "^0.35.3"
   },
   "devDependencies": {
