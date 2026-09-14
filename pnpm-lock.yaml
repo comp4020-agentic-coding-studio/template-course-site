@@ -18,14 +18,14 @@ importers:
         specifier: ^7.3.2
         version: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
       astro-course-university:
-        specifier: github:ANUcybernetics/astro-course-university#v0.1.1
-        version: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/278479e11745c2adc69418dbf675226146751b60(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
+        specifier: github:ANUcybernetics/astro-course-university#v0.2.0
+        version: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/372538a7f91848f1a055e418bbf6db3f3a6f27b1(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
       astro-theme-slop:
         specifier: github:benswift/astro-theme-slop#v0.1.0
         version: https://codeload.github.com/benswift/astro-theme-slop/tar.gz/96786f0eabfb3e3f0c030d6b1045e831ac799e0a(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
       astro-theme-university:
-        specifier: git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.14.7
-        version: https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/d96fe7556e8065cdb62d4d19dc076c519169b8e2(@astrojs/markdown-satteri@0.4.1)(@iconify-json/iconoir@1.2.11)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/ec5bd8c1ed22e7e9bf643d973c2e84eeb6c53a02(@astrojs/mdx@8.0.1(@astrojs/markdown-remark@7.3.1)(@astrojs/markdown-satteri@0.4.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(lightningcss@1.33.0)(pagefind@1.5.2)
+        specifier: git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.15.0
+        version: https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/cfea98ca957a7a2c2ff44ef6c72e4d9fca29ba81(@astrojs/markdown-satteri@0.4.1)(@iconify-json/iconoir@1.2.11)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/ec5bd8c1ed22e7e9bf643d973c2e84eeb6c53a02(@astrojs/mdx@8.0.1(@astrojs/markdown-remark@7.3.1)(@astrojs/markdown-satteri@0.4.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(lightningcss@1.33.0)(pagefind@1.5.2)
       astromotion:
         specifier: git+https://github.com/ANUcybernetics/astromotion.git#v0.29.0
         version: https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/ec5bd8c1ed22e7e9bf643d973c2e84eeb6c53a02(@astrojs/mdx@8.0.1(@astrojs/markdown-remark@7.3.1)(@astrojs/markdown-satteri@0.4.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))
@@ -1052,9 +1052,9 @@ packages:
     resolution: {integrity: sha512-TYfDUZl0iYq1dVZO+R0appTBkDmSMsOrafgWJMGqoD4xVd74imTRdzekE6tA8+6AIi+/GXMGlr/im0unLD1LRg==}
     engines: {node: '>=18'}
 
-  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/278479e11745c2adc69418dbf675226146751b60:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/278479e11745c2adc69418dbf675226146751b60}
-    version: 0.1.1
+  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/372538a7f91848f1a055e418bbf6db3f3a6f27b1:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/372538a7f91848f1a055e418bbf6db3f3a6f27b1}
+    version: 0.2.0
     engines: {node: '>=24'}
     peerDependencies:
       astro: ^7.0.0
@@ -1070,9 +1070,9 @@ packages:
     peerDependencies:
       astro: ^7.0.0
 
-  astro-theme-university@https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/d96fe7556e8065cdb62d4d19dc076c519169b8e2:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/d96fe7556e8065cdb62d4d19dc076c519169b8e2}
-    version: 0.14.7
+  astro-theme-university@https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/cfea98ca957a7a2c2ff44ef6c72e4d9fca29ba81:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/cfea98ca957a7a2c2ff44ef6c72e4d9fca29ba81}
+    version: 0.15.0
     engines: {node: '>=24'}
     peerDependencies:
       '@iconify-json/iconoir': ^1.2.0
@@ -2915,7 +2915,7 @@ snapshots:
 
   '@astrojs/yaml2ts@0.2.4':
     dependencies:
-      yaml: 2.9.0
+      yaml: 2.9.1
 
   '@babel/helper-string-parser@7.29.7': {}
 
@@ -3615,10 +3615,10 @@ snapshots:
       node-html-parser: 7.1.0
       p-limit: 7.3.1
 
-  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/278479e11745c2adc69418dbf675226146751b60(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)):
+  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/372538a7f91848f1a055e418bbf6db3f3a6f27b1(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)):
     dependencies:
       astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
-      yaml: 2.9.0
+      yaml: 2.9.1
 
   astro-icon@1.2.0:
     dependencies:
@@ -3630,7 +3630,7 @@ snapshots:
     dependencies:
       astro: 7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)
 
-  astro-theme-university@https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/d96fe7556e8065cdb62d4d19dc076c519169b8e2(@astrojs/markdown-satteri@0.4.1)(@iconify-json/iconoir@1.2.11)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/ec5bd8c1ed22e7e9bf643d973c2e84eeb6c53a02(@astrojs/mdx@8.0.1(@astrojs/markdown-remark@7.3.1)(@astrojs/markdown-satteri@0.4.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(lightningcss@1.33.0)(pagefind@1.5.2):
+  astro-theme-university@https://codeload.github.com/ANUcybernetics/astro-theme-university/tar.gz/cfea98ca957a7a2c2ff44ef6c72e4d9fca29ba81(@astrojs/markdown-satteri@0.4.1)(@iconify-json/iconoir@1.2.11)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0))(astromotion@https://codeload.github.com/ANUcybernetics/astromotion/tar.gz/ec5bd8c1ed22e7e9bf643d973c2e84eeb6c53a02(@astrojs/mdx@8.0.1(@astrojs/markdown-remark@7.3.1)(@astrojs/markdown-satteri@0.4.1)(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(astro@7.3.2(@astrojs/markdown-remark@7.3.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.3)(yaml@2.9.0)))(lightningcss@1.33.0)(pagefind@1.5.2):
     dependencies:
       '@astro-community/astro-embed-youtube': 0.5.10
       '@astrojs/markdown-remark': 7.3.1
