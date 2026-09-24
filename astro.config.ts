@@ -10,6 +10,9 @@ import { gitOrigin, resolveDeployment } from "./scripts/pages-base.ts";
 const { site, base } = resolveDeployment(process.env, gitOrigin);
 
 export default defineConfig({
+  // Astro 7's default ("jsx") drops the line break between wrapped prose and
+  // an inline element, running words into links. `true` collapses it to a space.
+  compressHTML: true,
   site,
   base,
   // Pages build as directories, so every route URL ends in a slash. Saying so
