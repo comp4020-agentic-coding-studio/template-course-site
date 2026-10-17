@@ -18,9 +18,9 @@
     "@iconify-json/iconoir": "^1.2.12",
     "astro": "^7.3.8",
     "astro-course-university": "github:ANUcybernetics/astro-course-university#v0.2.2",
-    "astro-theme-slop": "github:benswift/astro-theme-slop#v0.2.0",
+    "astro-theme-slop": "github:benswift/astro-theme-slop#v0.3.0",
     "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.20.0",
-    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.34.4",
+    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.35.0",
     "sharp": "^0.35.5"
   },
   "devDependencies": {
