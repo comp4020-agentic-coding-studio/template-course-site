@@ -6,3 +6,9 @@ allowBuilds:
   # has nothing to do --- and it breaks when a system libvips is present, where
   # it tries to compile from source and fails on the missing node-addon-api.
   sharp: false
+
+# Name patterns, not name@version: the supply-chain release-age gate matches by
+# package-name glob. Lets the template take Astro releases on day one.
+minimumReleaseAgeExclude:
+  - astro
+  - "@astrojs/*"
