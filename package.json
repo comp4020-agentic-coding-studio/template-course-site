@@ -14,22 +14,22 @@
     "test:template": "vitest run scripts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^8.0.3",
+    "@astrojs/mdx": "^8.1.0",
     "@iconify-json/iconoir": "^1.2.12",
-    "astro": "^7.3.8",
+    "astro": "^7.4.1",
     "astro-course-university": "github:ANUcybernetics/astro-course-university#v0.3.0",
     "astro-theme-slop": "github:benswift/astro-theme-slop#v0.3.0",
     "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.23.1",
-    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.36.0",
+    "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.37.0",
     "sharp": "^0.35.5"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.11",
     "@types/node": "^24.0.0",
     "lightningcss": "^1.33.0",
     "pagefind": "^1.5.2",
     "typescript": "^6.0.3",
-    "vitest": "^5.0.4"
+    "vitest": "^5.0.5"
   },
   "engines": {
     "pnpm": ">=11"
