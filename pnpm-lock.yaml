@@ -18,8 +18,8 @@ importers:
         specifier: ^7.4.2
         version: 7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@24.13.6)(esbuild@0.28.2)(yaml@2.9.1)
       astro-course-university:
-        specifier: github:ANUcybernetics/astro-course-university#v0.3.0
-        version: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/d37637f78b52aee6e6c3f050d0f949dfb493de30(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@24.13.6)(esbuild@0.28.2)(yaml@2.9.1))
+        specifier: github:ANUcybernetics/astro-course-university#v0.4.0
+        version: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/5bb01c8b491eabbbb671dc00946025f6004dd2eb(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@24.13.6)(esbuild@0.28.2)(yaml@2.9.1))
       astro-theme-slop:
         specifier: github:benswift/astro-theme-slop#v0.3.0
         version: https://codeload.github.com/benswift/astro-theme-slop/tar.gz/68c683912dfc9e2d7de6be817a8b58d546f5908a(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@24.13.6)(esbuild@0.28.2)(yaml@2.9.1))
@@ -1059,9 +1059,9 @@ packages:
     resolution: {integrity: sha512-TYfDUZl0iYq1dVZO+R0appTBkDmSMsOrafgWJMGqoD4xVd74imTRdzekE6tA8+6AIi+/GXMGlr/im0unLD1LRg==}
     engines: {node: '>=18'}
 
-  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/d37637f78b52aee6e6c3f050d0f949dfb493de30:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/d37637f78b52aee6e6c3f050d0f949dfb493de30}
-    version: 0.3.0
+  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/5bb01c8b491eabbbb671dc00946025f6004dd2eb:
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/5bb01c8b491eabbbb671dc00946025f6004dd2eb}
+    version: 0.4.0
     engines: {node: '>=24'}
     peerDependencies:
       astro: ^7.0.0
@@ -3593,7 +3593,7 @@ snapshots:
       node-html-parser: 7.1.0
       p-limit: 7.3.3
 
-  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/d37637f78b52aee6e6c3f050d0f949dfb493de30(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@24.13.6)(esbuild@0.28.2)(yaml@2.9.1)):
+  astro-course-university@https://codeload.github.com/ANUcybernetics/astro-course-university/tar.gz/5bb01c8b491eabbbb671dc00946025f6004dd2eb(astro@7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@24.13.6)(esbuild@0.28.2)(yaml@2.9.1)):
     dependencies:
       astro: 7.4.2(@astrojs/markdown-remark@7.3.4)(@types/node@24.13.6)(esbuild@0.28.2)(yaml@2.9.1)
       yaml: 2.9.1
