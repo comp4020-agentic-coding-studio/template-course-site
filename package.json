@@ -19,7 +19,7 @@
     "astro": "^7.4.11",
     "astro-course-university": "github:ANUcybernetics/astro-course-university#v0.4.0",
     "astro-theme-slop": "github:benswift/astro-theme-slop#v0.3.0",
-    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.25.0",
+    "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.25.1",
     "astromotion": "git+https://github.com/ANUcybernetics/astromotion.git#v0.38.0",
     "sharp": "^0.35.5"
   },
