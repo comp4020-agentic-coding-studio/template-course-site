@@ -14,9 +14,9 @@
     "test:template": "vitest run scripts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^8.1.1",
+    "@astrojs/mdx": "^8.1.5",
     "@iconify-json/iconoir": "^1.2.12",
-    "astro": "^7.4.2",
+    "astro": "^7.4.11",
     "astro-course-university": "github:ANUcybernetics/astro-course-university#v0.4.0",
     "astro-theme-slop": "github:benswift/astro-theme-slop#v0.3.0",
     "astro-theme-university": "git+https://github.com/ANUcybernetics/astro-theme-university.git#v0.25.0",
@@ -25,11 +25,11 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
-    "@types/node": "^24.0.0",
+    "@types/node": "^24.19.2",
     "lightningcss": "^1.33.0",
-    "pagefind": "^1.5.2",
+    "pagefind": "^1.6.0",
     "typescript": "^6.0.3",
-    "vitest": "^5.0.5"
+    "vitest": "^5.1.0"
   },
   "engines": {
     "pnpm": ">=11"
